@@ -1,4 +1,4 @@
-package com.revature.sierra.alchemy.MVC;
+package com.revature.sierra.alchemy.stepdefinition;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +12,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/test/java/features/RateRestaurant.feature", glue="stepDefinitions", tags="@RateRestaurant2")
+@CucumberOptions(features={"./src/test/java/resources/com/revature/sierra/alchemy/RateRestaurant.feature"}, glue={"com.revature.sierra.alchemy"}, tags="@RateRestaurant")
 public class RateRestaurant {
 	WebDriver driver;
 	
