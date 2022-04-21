@@ -1,4 +1,3 @@
-
 @Login
 Feature: Login Feature
   I want to use this template for my feature file

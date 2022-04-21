@@ -1,4 +1,4 @@
-package com.revature.sierra.alchemy.MVC;
+package com.revature.sierra.alchemy.stepdefinition;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,7 +18,7 @@ import io.cucumber.junit.CucumberOptions;
   tags="@Login")
 */
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/test/java/features/Login.feature", glue="stepDefinitions", tags="@Login")
+@CucumberOptions(features={"./src/test/java/resources/com/revature/sierra/alchemy/Login.feature"}, glue={"com.revature.sierra.alchemy"}, tags="@Login")
 public class LoginFeatureTest {
 	@Given("User arrives at sign in page")
 	public void user_arrives_at_sign_in_page() {

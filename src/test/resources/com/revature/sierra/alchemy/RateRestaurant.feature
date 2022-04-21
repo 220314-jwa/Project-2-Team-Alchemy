@@ -1,4 +1,4 @@
-@RateRestaurant2
+@RateRestaurant
 Feature: Rating a Restaurant
   I want to use this template for my feature file
 
