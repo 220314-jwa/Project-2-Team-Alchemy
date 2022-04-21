@@ -4,7 +4,7 @@ Feature: Rating a Restaurant
 
   @tag1
   Scenario: User rate a Restaurant
-    Given the user is homepage
+    Given the user is "homepage"
     And given the user wrote a review
     When the user clicks on a star rating
     And the user clicks submit
