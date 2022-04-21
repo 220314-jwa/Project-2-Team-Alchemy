@@ -93,14 +93,14 @@ public class RateRestaurant {
 	@Given("the user is {string}")
 	public void the_user_is(String string) {
 	    // Write code here that turns the phrase above into concrete actions
-	    page.clickAnButton(string);
+	    page.clickByID(string);
 	}
 	
 	
 	@Given("the user is homepage")
 	public void the_user_is_homepage() {
 	    // Write code here that turns the phrase above into concrete actions
-		page.clickAnButton("homepage");
+		page.clickByID("homepage");
 	}
 
 	@Given("given the user wrote a review")
