@@ -21,3 +21,10 @@ Feature: Rating a Restaurant
 		When: The User wants to pick a review
 		Then: the user clicks the comment section 
 		And writes a review
+	Scenario: A user was not able to login successfully
+		Given User arrives at sign in page
+		When Customer enters credentials in the username and password field
+		And The credentials are incorrect
+		And The user tries to reset their credentials
+		Then Prompt user to enter the email they used to sign up
+		
