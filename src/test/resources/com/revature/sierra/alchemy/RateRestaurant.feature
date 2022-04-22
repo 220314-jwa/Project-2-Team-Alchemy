@@ -3,7 +3,7 @@ Feature: Rating a Restaurant
   I want to use this template for my feature file
 
   @tag1
-  Scenario: User rate a Restaurant
+  Scenario: user gets the address
     Given the user is "homepage"
     And given the user wrote a review
     When the user clicks on a star rating
