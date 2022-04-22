@@ -20,4 +20,4 @@ Feature: Rating a Restaurant
 		Given: The user logged in and picked a restaurant
 		When: The User wants to pick a review
 		Then: the user clicks the comment section 
-		And writes a review
+
