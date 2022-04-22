@@ -11,9 +11,12 @@ import org.openqa.selenium.support.FindBy;
 public class examplePage {
 	WebDriver driver;
 	
-	@FindBy(id="exampleButton")
+	@FindBy(id="watch7-content")
 	WebElement exampleButton;
 	
+	public void goToExamplePage() {
+		driver.get("www.youtube.com");
+	}
 	
 	public examplePage(WebDriver driver) {
 		this.driver = driver;

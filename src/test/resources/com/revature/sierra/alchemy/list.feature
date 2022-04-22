@@ -3,7 +3,7 @@ Feature: List feature
 
 Scenario: search forlist of the restaurant
 	Given User is at HomePage
-	When  The user clicks on the "Homepage" Tab 
+	When  The user clicks on "Homepage" Tab 
 	Then A list of restaurants will show up. 
 
 Scenario: the user wants to search Fastfood restaurant

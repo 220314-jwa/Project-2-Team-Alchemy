@@ -16,11 +16,10 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
+@Login
 Feature: LogIn feature
   I want to use this template for my feature file
 
-  @tag1
   Scenario: Login scenario successfully
     Given user arrives at the homepage
     When user clicks on member sign on button
@@ -30,8 +29,6 @@ Feature: LogIn feature
     Then user is given access to member services of the app
     And user is alerted that user is signed in 
     
-
-  @tag2
   Scenario: LogIn scenario unsuccessfully
     Given user arrives at the homepage
     When user clicks on member sign on button 

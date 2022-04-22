@@ -41,5 +41,16 @@ public class searchsteps {
 	    throw new io.cucumber.java.PendingException();
 	}
 
+	@When("user is on Fastfood restaurant page")
+	public void user_is_on_fastfood_restaurant_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("user can see {string} Page")
+	public void user_can_see_page(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
 
 }
