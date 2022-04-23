@@ -39,15 +39,24 @@ Feature: Comment feature
 		Then the review is placed into the restaurant review section
 		And the username is displayed
 
-  @tag2
-  Scenario Outline: Title of your scenario outline
-    Given I want to write a step with <name>
-    When I check for the <value> in step
-    Then I verify the <status> in step
+//////////////////////////////////////////////////
 
-    Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+  @tag2
+  Scenario Outline: Commenting under a review posted by another user
+    Given The user already looked up the restaurant, selected restaurant from "list"
+    And Navigated to the 'Review' tab on the restaurant page 
+    And The user sees all the reviews listed
+    And The user selects a particular review to read about a customer's experience
+    When The user needs to leave a comment on a customer's review to either agree/disagree
+    Then The user select the 'comment' icon and a text box appears
+
+  Scenario Outline: The customer needs to post their comment
+    Given The user is in the review section of a restaurant's page 
+    And They clicked on the comment icon to leave a comment on the review
+    And a text box appears that prompts them to type their comment
+    And Below the box, a 'submit' button appears 
+    And The box becomes clickable once the user starts typing 
+    When The user is done typing and they would like to sumbit their comment
+    Then The customer clicks on the 'submit' button and the comment is saved under the review
       
   

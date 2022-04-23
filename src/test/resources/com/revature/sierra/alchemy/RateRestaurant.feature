@@ -1,7 +1,7 @@
 @RateRestaurant
 Feature: Rating a Restaurant
   I want to use this template for my feature file
-
+ 
   @tag1
   Scenario: user gets the address
     Given the user is "homepage"
