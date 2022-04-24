@@ -27,18 +27,12 @@ import io.cucumber.junit.CucumberOptions;
 /*
  *  important links: https://chromedriver.chromium.org/downloads
  * 
- * 	@BeforeAll - annotation that tells cucumber to run the method, befores
+ * 	@BeforeAll - annotation that tells cucumber to run the method, before
  *  everything else.
  *  	-Use to set up webdriver
  *  	-Set up any initial variables/ constants
- * 
  * 		POM structure, Page Object Model
- * 			selenium imports:
- * 			import org.openqa.selenium.By;
-			import org.openqa.selenium.WebDriver;
-			import org.openqa.selenium.WebElement;
-		POM 
- */
+ * 	 */
 
 
 @RunWith(Cucumber.class)
@@ -59,6 +53,7 @@ public class RateRestaurant {
 		WebElement example = driver.findElement(By.id("example"));
 		example.click();
 		
+		
 		WebElement selectElement = driver.findElement(By.id("selectelement"));
 		WebElement option = driver.findElement(By.id("option"));
 		WebElement input = driver.findElement(By.id("input"));
@@ -67,7 +62,7 @@ public class RateRestaurant {
 		input.sendKeys(a);
 		driver.get("www.google.com");
 		
-		Wait<WebDriver> fluentWait = new FluentWait<>(driver)
+		/*Wait<WebDriver> fluentWait = new FluentWait<>(driver)
 				.withTimeout(Duration.ofSeconds(2)) //Final Duraction of the wait
 				.pollingEvery(Duration.ofMillis(500)); // Interval that the wait calls the specified method
 		fluentWait.until(ExpectedConditions.elementToBeClickable(By.id("logInBtn")));
@@ -80,7 +75,7 @@ public class RateRestaurant {
 		exampleWait.until(ExpectedConditions.presenceOfElementLocated(By.id("exampleBtn")));
 
 
-
+*/
 		
 		page = new examplePage(driver);
 	}

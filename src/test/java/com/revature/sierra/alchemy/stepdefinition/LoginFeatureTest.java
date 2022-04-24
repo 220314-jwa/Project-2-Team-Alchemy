@@ -11,12 +11,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 
-/*
-@RunWith(Cucumber.class)
-@CucumberOptions(features="src/test/java/features/Login.feature",
- glue="stepDefinitions",
-  tags="@Login")
-*/
+
 @RunWith(Cucumber.class)
 @CucumberOptions(features={"./src/test/java/resources/com/revature/sierra/alchemy/Login.feature"}, glue={"com.revature.sierra.alchemy"}, tags="@Login")
 public class LoginFeatureTest {
