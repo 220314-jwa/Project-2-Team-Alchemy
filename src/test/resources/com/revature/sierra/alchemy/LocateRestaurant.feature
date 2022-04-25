@@ -13,4 +13,3 @@ Feature: Locate a Restaurant
   	Then the application will show the restaurant on a map
 
 
-

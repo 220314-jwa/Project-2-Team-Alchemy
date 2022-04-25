@@ -6,30 +6,5 @@
 #When: Some key actions
 #Then: To observe outcomes or validation
 #And,But: To enumerate more Given,When,Then steps
-#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
-#Examples: Container for s table
-#Background: List of steps run before each of the scenarios
-#""" (Doc Strings)
-#| (Data Tables)
-#@ (Tags/Labels):To group Scenarios
-#<> (placeholder)
-#""
-## (Comments)
-#Sample Feature Definition Template
-@ReviewRestaurant
-Feature: Review Restaurant
-  I want to use this template for my feature file
 
-  Scenario: Review of a restaurant
-    Given the user is on the restaurant page
-    When the user clicks on "review"
-    And the user input their "review"
-  	And the user clicks on submit button
-    Then the user will receive "review submit successfully"
-
-  Scenario: Missing Review
-    Given the user is on the restaurant page
-    When the user clicks on "review"
-  	And the user clicks on submit button
-    Then the user will receive "Missing inputs"
-
+	
