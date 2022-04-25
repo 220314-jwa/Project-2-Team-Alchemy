@@ -13,7 +13,8 @@ public class examplePage {
 	
 	@FindBy(id="watch7-content")
 	WebElement exampleButton;
-	
+	@FindBy(xpath="/html/body/div[1]/div[2]/div/div[2]/div/div[2]/div/div[3]/a")
+	WebElement btn;
 	public void goToExamplePage() {
 		driver.get("www.youtube.com");
 	}

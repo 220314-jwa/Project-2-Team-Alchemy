@@ -1,8 +1,7 @@
 package com.revature.sierra.alchemy.stepdefinition;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.junit.runner.RunWith;
+import org.springframework.web.bind.annotation.RestController;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,15 +9,9 @@ import io.cucumber.java.en.When;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
-
-/*
+@RestController 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/test/java/features/Login.feature",
- glue="stepDefinitions",
-  tags="@Login")
-*/
-@RunWith(Cucumber.class)
-@CucumberOptions(features={"./src/test/java/resources/com/revature/sierra/alchemy/Login.feature"}, glue={"com.revature.sierra.alchemy"}, tags="@Login")
+@CucumberOptions(features={"./src/test/java/resources/com/example/restaurant/restaurant/login.feature"}, glue={"com.example.restaurant.restaurant"}, tags="@tag")
 public class LoginFeatureTest {
 	@Given("user arrives at the homepage")
 	public void user_arrives_at_the_homepage() {
@@ -46,6 +39,27 @@ public class LoginFeatureTest {
 
 	@When("user clicks Enter button")
 	public void user_clicks_enter_button() {
+<<<<<<< HEAD
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("user is given access to member services of the app")
+	public void user_is_given_access_to_member_services_of_the_app() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("user is alerted that user is signed in")
+	public void user_is_alerted_that_user_is_signed_in() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("sign in fails and asks user to retry credentials")
+	public void sign_in_fails_and_asks_user_to_retry_credentials() {
+=======
+>>>>>>> 58390b281ecb3ceed3b0e48c1e243da5af1e722b
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
@@ -67,4 +81,5 @@ public class LoginFeatureTest {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
+
 }
