@@ -1,8 +1,7 @@
 package com.revature.sierra.alchemy.stepdefinition;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.junit.runner.RunWith;
+import org.springframework.web.bind.annotation.RestController;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,43 +9,56 @@ import io.cucumber.java.en.When;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
-
-/*
+@RestController 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/test/java/features/Login.feature",
- glue="stepDefinitions",
-  tags="@Login")
-*/
-@RunWith(Cucumber.class)
-@CucumberOptions(features={"./src/test/java/resources/com/revature/sierra/alchemy/Login.feature"}, glue={"com.revature.sierra.alchemy"}, tags="@Login")
+@CucumberOptions(features={"./src/test/java/resources/com/example/restaurant/restaurant/login.feature"}, glue={"com.example.restaurant.restaurant"}, tags="@tag")
 public class LoginFeatureTest {
-	@Given("User arrives at sign in page")
-	public void user_arrives_at_sign_in_page() {
+	@Given("user arrives at the homepage")
+	public void user_arrives_at_the_homepage() {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
 
-	@When("Customer enters credentials in the username and password field")
-	public void customer_enters_credentials_in_the_username_and_password_field() {
+	@When("user clicks on member sign on button")
+	public void user_clicks_on_member_sign_on_button() {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
 
-	@When("The credentials are incorrect")
-	public void the_credentials_are_incorrect() {
+	@When("user inputs {string} on username text field")
+	public void user_inputs_on_username_text_field(String string) {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
 
-	@When("The user tries to reset their credentials")
-	public void the_user_tries_to_reset_their_credentials() {
+	@When("user inputs {string} on password text field")
+	public void user_inputs_on_password_text_field(String string) {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("Prompt user to enter the email they used to sign up")
-	public void prompt_user_to_enter_the_email_they_used_to_sign_up() {
+	@When("user clicks Enter button")
+	public void user_clicks_enter_button() {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
+
+	@Then("user is given access to member services of the app")
+	public void user_is_given_access_to_member_services_of_the_app() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("user is alerted that user is signed in")
+	public void user_is_alerted_that_user_is_signed_in() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("sign in fails and asks user to retry credentials")
+	public void sign_in_fails_and_asks_user_to_retry_credentials() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
 }
