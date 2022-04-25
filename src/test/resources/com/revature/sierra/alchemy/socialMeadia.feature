@@ -23,10 +23,10 @@ Feature: Social Media Feature
   @tag1
   Scenario: Scocial media link
     Given a user is on the restaurant page 
-    And wants to connect to a social media
+    And is connecting to social media
     When user clicks on icon 
     And logs in to theire social media
     Then the retaurant info 
-    And the users comment will post to the social media page
+    And the users coment will post to the social media page
 
 
