@@ -5,11 +5,10 @@ Scenario: search forlist of the restaurant
 	Given User is at HomePage
 	When  The user clicks on "Homepage" Tab 
 	Then A list of restaurants will show up. 
+	
+	
+	Scenario: search restaurant by city and zipcode
 
-Scenario: the user wants to search Fastfood restaurant
-	Given User is at HomePage
-	When The user clicks on "Restaurant" Tab
-	And  user is on Fastfood restaurant page
-	Then user clicks on "Sonic Drive-in"
-	Then user can see "Sonic Drive-in" Page
-
+	When User search restaurant by zipcode
+	Then User should able to see all the restaurants  in that zipcode.
+	
