@@ -23,10 +23,10 @@ Feature: Rating a Restaurant
 
 @tag2
 Scenario: Restaurant Owner access users review
-Given: The Restaurant Owner is an admin
+Given: The Restaurant Owner is a user with a usertype as Restaurant Owner
 And: The Restaurant Owner logs in as an admin to restaurant page
-When: The Restaurant Owner wants to view all reviews and ratings
+When: The Restaurant Owner to view all reviews and ratings
 And: The Restaurant Owner clicks on view reviews
 And: The Restaurant Owner clicks on comment
-Then: The Restaurant owner clicks submit to leave a response as admin
-And: The Restaurant owner is directed back to the view reviews page
+And: The Restaurant owner clicks submit to leave a response.
+Then: The Restaurant owner is directed back to the view reviews page
