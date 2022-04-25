@@ -35,9 +35,7 @@ Feature: LogIn feature
     And user inputs "username" on username text field
     And user inputs "password" on password text field
     Then sign in fails and asks user to retry credentials
-    
-    
-  @tag3
+
    Scenario: User Registeration 
     	Given: user arrives at the homepage
     	When: user clicks the register user button

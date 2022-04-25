@@ -8,7 +8,6 @@ Scenario: search forlist of the restaurant
 	
 	
 	Scenario: search restaurant by city and zipcode
-
 	When User search restaurant by zipcode
 	Then User should able to see all the restaurants  in that zipcode.
 	
