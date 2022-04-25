@@ -30,5 +30,6 @@ Scenario: Restaurant Owner access users review
 Scenario: Restaurant Owner response to a user review
 	Given: The Restaurant Owner is on reviews page
 	When: The Restaurant Owner clicks on comment
+	And: The Restaurant Owner inputs a comment
 	And : The Restaurant owner clicks submit to leave a response.
 	Then: The Restaurant owner is directed back to the view reviews page
