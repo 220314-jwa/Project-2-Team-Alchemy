@@ -46,6 +46,4 @@ Feature: LogIn feature
     	When: user clicks the register user button
     	And: user inputs username
     	And: user inputs email address 
-    	And: user receives email confirmation of registration
     	Then: user is given access to view her registered profile
-    	And: user is able to leave comments 
