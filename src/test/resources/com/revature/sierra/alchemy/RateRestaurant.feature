@@ -1,6 +1,5 @@
 @RateRestaurant
 Feature: Rating a Restaurant
-  I want to use this template for my feature file
 
   Scenario: user gets the address
     Given the user is "homepage"
@@ -10,9 +9,11 @@ Feature: Rating a Restaurant
     Then the app show the restaurant page
 	Scenario: A user is rating a restaurant
 		Given The user is signed in on the app
-		When The user wants to leave a review on a restaurant
-		And The user clicks on the search button and types in name of restaurant
-		And The customer selects the restaurant and navigates to their ratings tab
-		Then The user clicks the text box to write a review
+		When the user types in name of restaurant
+		And the user clicks "search" button
+		And The user selects the restaurant 
+		And the user clicks on "rate the restaurant"
 		And The user selects number of stars
+		And the user clicks submit button
+		Then the application updates the rating of that restaurant
 		

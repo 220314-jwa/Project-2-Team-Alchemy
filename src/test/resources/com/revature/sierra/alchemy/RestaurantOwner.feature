@@ -1,7 +1,6 @@
 
 @RestaurantOwner
 Feature: Restaurant Owner Features
-  I want to use this template for my feature file
 
 	@tag2
 	Scenario: Restaurant Owner access users review

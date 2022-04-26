@@ -1,7 +1,6 @@
 
 @Login
 Feature: LogIn feature
-  I want to use this template for my feature file
 
   Scenario: Login scenario successfully
     Given user arrives at the homepage

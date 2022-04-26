@@ -1,6 +1,5 @@
 @LocateRestaurant
 Feature: Locate a Restaurant
-  I want to use this template for my feature file
   Scenario: User gets restaurant address
     Given the user is on the "list" page
     When the user clicks on the "restaurant"
