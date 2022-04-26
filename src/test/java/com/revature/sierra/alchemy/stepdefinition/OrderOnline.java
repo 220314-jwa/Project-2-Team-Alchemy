@@ -17,32 +17,26 @@ public class OrderOnline {
 	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("User should  navigate to  {string} Options")
-	public void user_should_navigate_to_options(String string) {
+	@When("User navigate to  {string} Options")
+	public void user_navigate_to_options(String string) {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("User clicks on particular item")
-	public void user_clicks_on_particular_item() {
+	@When("User enters the quantity and hit {string} options")
+	public void user_enters_the_quantity_and_hit_options(String string) {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("User should able to enter the quantity and hit {string} options")
-	public void user_should_able_to_enter_the_quantity_and_hit_options(String string) {
+	@When("User enters name,mobile no,payment method and hit {string} button")
+	public void user_enters_name_mobile_no_payment_method_and_hit_button(String string) {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("User should able to enter name,mobile no,payment method and hit {string} button")
-	public void user_should_able_to_enter_name_mobile_no_payment_method_and_hit_button(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@Then("User should able to see the confirmation page.")
-	public void user_should_able_to_see_the_confirmation_page() {
+	@Then("User can see the confirmation page.")
+	public void user_can_see_the_confirmation_page() {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}

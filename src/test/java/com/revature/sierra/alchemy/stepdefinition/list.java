@@ -84,6 +84,6 @@ public void user_should_search_restaurant_by_zipcode() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
-	
+
 
 }

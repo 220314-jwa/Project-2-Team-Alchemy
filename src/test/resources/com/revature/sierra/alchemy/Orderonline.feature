@@ -2,7 +2,7 @@ Feature: Order online
 Scenario: User wants to order food
 
 Given the User is at "Homepage"
-When the User clicks on " See Menu and Order"
+When  User clicks on " See Menu and Order"
 And  User navigate to  "Menu" Options
 And  User clicks on particular item 
 And  User enters the quantity and hit "AddCart" options 
