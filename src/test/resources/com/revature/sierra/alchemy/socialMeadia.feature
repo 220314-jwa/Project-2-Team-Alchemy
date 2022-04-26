@@ -10,6 +10,6 @@ Feature: Social Media Feature
     When user clicks on icon 
     And logs in to theire social media
     Then the retaurant info 
-    And the users coment will post to the social media page
+    And the users comment will post to the social media page
 
 
