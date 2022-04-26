@@ -16,7 +16,8 @@ Feature: LogIn feature
     When user clicks on member sign on button 
     And user inputs "username" on username text field
     And user inputs "password" on password text field
-    Then sign in fails and asks user to retry credentials
+    Then the app shows sign-in fails 
+    And the app asks user to retry credentials
 
   Scenario: User Registeration 
     Given: user arrives at the homepage
