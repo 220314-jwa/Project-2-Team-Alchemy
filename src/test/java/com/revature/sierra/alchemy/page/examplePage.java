@@ -29,6 +29,8 @@ public class examplePage {
 	
 	public void clickByID(String id) {
 		driver.findElement(By.id(id)).click();
+		By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div[2]/div/div[3]/a").findElement(btn)
+		
 	}
 	
 	public void inputById(String id,String input) {

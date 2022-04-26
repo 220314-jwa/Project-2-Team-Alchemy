@@ -16,9 +16,3 @@ Feature: Rating a Restaurant
 		Then The user clicks the text box to write a review
 		And The user selects number of stars
 		
-	Scenario: A user is writing a review
-		Given The user logged in and picked a restaurant
-		When The user wants to pick a review
-		And the user clicks the comment section 
-		And the user writes a review
-

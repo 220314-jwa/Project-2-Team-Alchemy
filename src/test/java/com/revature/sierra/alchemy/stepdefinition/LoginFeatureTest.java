@@ -39,27 +39,6 @@ public class LoginFeatureTest {
 
 	@When("user clicks Enter button")
 	public void user_clicks_enter_button() {
-<<<<<<< HEAD
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@Then("user is given access to member services of the app")
-	public void user_is_given_access_to_member_services_of_the_app() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@Then("user is alerted that user is signed in")
-	public void user_is_alerted_that_user_is_signed_in() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@Then("sign in fails and asks user to retry credentials")
-	public void sign_in_fails_and_asks_user_to_retry_credentials() {
-=======
->>>>>>> 58390b281ecb3ceed3b0e48c1e243da5af1e722b
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
@@ -81,5 +60,7 @@ public class LoginFeatureTest {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
+
+
 
 }
