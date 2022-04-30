@@ -1,0 +1,18 @@
+<div #thisComponent>
+    <p>restaurant-content works!</p>
+    <div class="restaurant-image-container">
+
+    </div>
+    <div class="restaurant-info-container">
+        <h3 class="restaurant-name">{{restaurantInfo.restaurantName}}</h3>
+        <div class="restaurant-rating" >{{restaurantInfo.restaurantRating}}</div>
+        <div class="restaurant-description">{{restaurantInfo.restaurantDescription}}</div>
+        <div class="btn-container">
+            <button (click)="loadUserReviews()">Review</button>
+        </div>
+    </div>
+    <div #restaurantReview>
+
+    </div>
+
+</div>
