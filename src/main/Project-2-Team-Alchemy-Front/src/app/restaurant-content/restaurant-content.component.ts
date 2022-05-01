@@ -34,6 +34,8 @@ export class RestaurantContentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
   loadUserReviews(){
     //Need a fetch request to grab from database
     this.reviewComponent.clear();

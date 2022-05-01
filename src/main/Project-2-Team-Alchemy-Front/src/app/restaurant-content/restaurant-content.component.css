@@ -1,0 +1,43 @@
+.restaurant-info-container{
+    flex-direction: column;
+    align-items: left;
+    border: 1px solid black;
+    display: flex;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.restaurant-outer-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.restaurant-name{
+    font-size: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.restaurant-inner-container{
+    flex-direction: row;
+    display: flex;
+    width: 800px;
+    height: 250px;
+    border: 1px solid black;
+}
+
+.restaurant-image-content{
+    padding:5px;
+    height: 240px;
+    width: 240px;
+}
+
+.restaurant-content{
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.btn-container{
+    padding-top: 15px;
+}

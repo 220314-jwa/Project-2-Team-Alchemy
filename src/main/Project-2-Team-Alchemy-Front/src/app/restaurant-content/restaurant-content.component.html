@@ -1,18 +1,18 @@
-<div #thisComponent>
-    <p>restaurant-content works!</p>
-    <div class="restaurant-image-container">
+<div #thisComponent class="restaurant-outer-container">
 
-    </div>
-    <div class="restaurant-info-container">
-        <h3 class="restaurant-name">{{restaurantInfo.restaurantName}}</h3>
-        <div class="restaurant-rating" >{{restaurantInfo.restaurantRating}}</div>
-        <div class="restaurant-description">{{restaurantInfo.restaurantDescription}}</div>
-        <div class="btn-container">
-            <button (click)="loadUserReviews()">Review</button>
+    <div src class="restaurant-inner-container">
+        <div class="restaurant-image-container" >
+            <img src="https://skillz4kidzmartialarts.com/wp-content/uploads/2017/04/default-image-620x600.jpg" class="restaurant-image-content">
+        </div>
+        <div class="restaurant-info-container">
+            <div class="restaurant-name">{{restaurantInfo.restaurantName}}</div>
+            <div class="restaurant-rating restaurant-content" >{{restaurantInfo.restaurantRating}}</div>
+            <div class="restaurant-description restaurant-content">{{restaurantInfo.restaurantDescription}}</div>
+            <div class="btn-container">
+                <button (click)="loadUserReviews()">Review</button>
+            </div>
         </div>
     </div>
     <div #restaurantReview>
-
     </div>
-
 </div>
