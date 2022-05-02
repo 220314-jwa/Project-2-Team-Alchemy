@@ -1,0 +1,5 @@
+<div>
+    <p>restaurant-item works!</p>
+    <button *ngFor="let restaurantInfoExample of restaurantInfoExamples" (click)="showRestaurantInfo(restaurantInfoExample.id)">
+        {{restaurantInfoExample.id}} : {{restaurantInfoExample.restaurantName}}</button>
+</div>
