@@ -1,0 +1,12 @@
+<section>
+ <label for="usernameInput">Username:</label>   
+<input [(ngModel)]="credentials.username" placeholder="username" id="username">
+<br>
+<label for="passwordInput">Password:</label>
+<input [(ngModel)]="credentials.password" placeholder="password" id="password">
+<br>
+<button (click)="logIn()" type="button" id="btnLogIn" >Login</button>
+<br>
+<button type="button" id="btnRegister">Register User</button>
+</section>
+<router-outlet></router-outlet>
