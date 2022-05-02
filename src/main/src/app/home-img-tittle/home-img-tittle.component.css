@@ -1,0 +1,18 @@
+.home {
+    
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+
+    background-image: url('../../assets/alex-haney-CAhjZmVk5H4-unsplash.jpg');
+    background-size: cover;
+    height:18em;
+}
+
+.home_header {
+
+    letter-spacing: 4px;
+    background-color: antiquewhite;
+    text-align: center;
+}
