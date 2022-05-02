@@ -9,9 +9,9 @@ import io.cucumber.java.en.When;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
-@RestController 
+
 @RunWith(Cucumber.class)
-@CucumberOptions(features={"./src/test/java/resources/com/example/restaurant/restaurant/login.feature"}, glue={"com.example.restaurant.restaurant"}, tags="@tag")
+@CucumberOptions(features={"./src/test/java/resources/com/revature/sierra/alchemy/Login.feature"}, glue={"com.revature.sierra.alchemy"}, tags="@Login")
 public class LoginFeatureTest {
 	@Given("user arrives at the homepage")
 	public void user_arrives_at_the_homepage() {
@@ -60,5 +60,7 @@ public class LoginFeatureTest {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
+
+
 
 }
