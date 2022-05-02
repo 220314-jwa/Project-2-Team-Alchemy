@@ -13,6 +13,9 @@ import { RestaurantItemComponent } from './restaurant-item/restaurant-item.compo
 import { RestaurantListAndReviewComponent } from './restaurant-list-and-review/restaurant-list-and-review.component';
 import { RestaurantRatingComponent } from './restaurant-rating/restaurant-rating.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HomeImgTittleComponent } from './home-img-tittle/home-img-tittle.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RestaurantListComponent,
     RestaurantItemComponent,
     RestaurantListAndReviewComponent,
-    RestaurantRatingComponent
+    RestaurantRatingComponent,
+    NavBarComponent,
+    HomeImgTittleComponent
   ],
   imports: [
     BrowserModule,

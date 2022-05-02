@@ -32,9 +32,12 @@ export class RestaurantContentComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
-  
+  fetchData(){
+    
+  }
 
   loadUserReviews(){
     //Need a fetch request to grab from database
