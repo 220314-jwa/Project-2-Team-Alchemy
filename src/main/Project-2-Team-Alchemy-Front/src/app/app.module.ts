@@ -15,6 +15,11 @@ import { RestaurantRatingComponent } from './restaurant-rating/restaurant-rating
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeImgTittleComponent } from './home-img-tittle/home-img-tittle.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { FormsModule } from '@angular/forms';
+import { UserService } from './services/user.service';
 
 
 @NgModule({
@@ -30,14 +35,20 @@ import { HomeImgTittleComponent } from './home-img-tittle/home-img-tittle.compon
     RestaurantListAndReviewComponent,
     RestaurantRatingComponent,
     NavBarComponent,
-    HomeImgTittleComponent
+    HomeImgTittleComponent,
+    HomePageComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
