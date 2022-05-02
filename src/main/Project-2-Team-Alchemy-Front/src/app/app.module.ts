@@ -11,6 +11,8 @@ import { RestaurantContentComponent } from './restaurant-content/restaurant-cont
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantItemComponent } from './restaurant-item/restaurant-item.component';
 import { RestaurantListAndReviewComponent } from './restaurant-list-and-review/restaurant-list-and-review.component';
+import { RestaurantRatingComponent } from './restaurant-rating/restaurant-rating.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,12 @@ import { RestaurantListAndReviewComponent } from './restaurant-list-and-review/r
     RestaurantListComponent,
     RestaurantItemComponent,
     RestaurantListAndReviewComponent,
+    RestaurantRatingComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
