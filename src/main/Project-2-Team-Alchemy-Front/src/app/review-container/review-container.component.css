@@ -1,0 +1,29 @@
+
+.review-container{
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    height:auto;
+    width: 900px;
+    box-shadow:
+      1px 2px 2px #e24f5b66,
+      2px 4px 4px #e24f5b40,
+      4px 8px 8px #e24f5b1e;
+    margin-bottom: 10px;
+    background-color: #e9de61c4;
+}
+
+.review-username{
+  margin-left:20px;
+  font-size: 20px;
+}
+
+.review-user-rating{
+
+}
+
+.review-reviewcontent{
+    margin: 20px;
+    font-size: 16px;
+}

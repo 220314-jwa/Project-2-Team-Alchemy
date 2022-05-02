@@ -1,0 +1,19 @@
+.review-list-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: inherit;
+    padding-left: 10%;
+    padding-right: 10%;
+    /*
+        Wait till scheme is established
+        Can also try:
+        #EBDDE4
+        #EBEBDD
+        #DDEBE4
+        #DDEBDD
+        #a05f66
+    */
+    background-color: #efa06c; 
+
+}

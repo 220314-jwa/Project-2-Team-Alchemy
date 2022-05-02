@@ -1,0 +1,5 @@
+<div class="review-container"> <!--vertical orientation, no photos-->
+    <h3 class="review-username">{{reviewData.username}}</h3>
+    <div class="review-user-rating" *ngIf="checkAnonymous()">{{reviewData.userRating}}</div>
+    <div class="review-reviewcontent">{{reviewData.reviewContent}}</div>
+</div>
