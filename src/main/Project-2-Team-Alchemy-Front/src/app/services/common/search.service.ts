@@ -15,7 +15,7 @@ export class SearchService {
     this.filterValue.next(value);
   }
 
-  get filter() {
+  get filter() : any{
     return this.filter;
   }
 }

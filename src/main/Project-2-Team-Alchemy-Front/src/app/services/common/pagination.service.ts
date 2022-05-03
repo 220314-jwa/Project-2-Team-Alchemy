@@ -14,7 +14,7 @@ export class PaginationService {
     this.paginationValue.next(value);
   }
 
-  get pagination(){
+  get pagination() : any{
     return this.pagination;
   }
 }
