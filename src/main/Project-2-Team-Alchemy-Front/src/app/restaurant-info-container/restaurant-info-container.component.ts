@@ -9,8 +9,8 @@ import { RestaurantReviewService } from "../restaurant-review.service";
 })
 export class RestaurantInfoContainerComponent implements OnInit,AfterViewInit {
 
-
-  @ViewChild("restaurantInfo", { read: ViewContainerRef }) input!: ViewContainerRef;
+  //Grab the div component, equivalent getElemenyById()
+  @ViewChild("restaurantInfo", {read: ViewContainerRef }) input!: ViewContainerRef;
 
   constructor(private restaurantReviewService : RestaurantReviewService) {
   }
