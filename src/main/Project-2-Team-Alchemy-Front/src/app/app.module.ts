@@ -20,6 +20,9 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
+import { RestaurantsListSearchComponent } from './restaurants-list-search/restaurants-list-search.component';
+import {RestaurantsListPaginationComponent} from './restaurants-list-pagination/restaurants-list-pagination.component';
+import {HeaderComponent} from './header/header.component';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { UserService } from './services/user.service';
     HomeImgTittleComponent,
     HomePageComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    RestaurantsListSearchComponent,
+    RestaurantsListPaginationComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
