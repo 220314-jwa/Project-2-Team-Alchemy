@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'; 
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
 import { RestaurantReviewComponent } from './Review/restaurant-review/restaurant-review.component';
-import { ReviewModule } from './Review/Review.module';
-=======
+import { UserReviewComponent } from './Review/user-review/user-review.component';
+import { ReviewModule } from './Review/restaurant-review.module';
 import { RestaurantInfoContainerComponent } from './restaurant-info-container/restaurant-info-container.component';
 import { NavTabComponent } from './nav-tab/nav-tab.component';
 import { RestaurantReviewContainerComponent } from './restaurant-review-container/restaurant-review-container.component';
@@ -23,15 +23,13 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
->>>>>>> e1c748bc3d58fb94b36695845988256e86f7a8e0
 
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-    RestaurantReviewComponent
-=======
+    RestaurantReviewComponent,
+    UserReviewComponent,
     RestaurantInfoContainerComponent,
     NavTabComponent,
     RestaurantReviewContainerComponent,
@@ -46,20 +44,18 @@ import { UserService } from './services/user.service';
     HomePageComponent,
     LoginComponent,
     SignupComponent
->>>>>>> e1c748bc3d58fb94b36695845988256e86f7a8e0
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
-    ReviewModule
-=======
+    ReviewModule,
+    HttpClientModule,
+    NgModule,
     NgbModule,
     FormsModule
   ],
   providers: [
     UserService
->>>>>>> e1c748bc3d58fb94b36695845988256e86f7a8e0
   ],
   bootstrap: [AppComponent]
 })
