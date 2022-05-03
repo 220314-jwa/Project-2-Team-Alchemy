@@ -13,7 +13,7 @@ export class RestaurantsListPaginationComponent implements OnInit {
   ngOnInit() {
   }
 
-  pageChanged($event){
+  pageChanged($event: any){
     console.log($event);
     this.paginationService.pagination = $event; 
   }

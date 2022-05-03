@@ -20,8 +20,11 @@ export class RestaurantsListSearchComponent implements OnInit {
   reverse = false;
   sortedCollection!: any[];
 
-  constructor(private apiService: ApiService, private pageService: PageService, 
-    private orderPipe: OrderPipe, private searchService: SearchService, private sortService: SortService) { }
+  constructor(private apiService: ApiService, 
+              private pageService: PageService, 
+              private orderPipe: OrderPipe, 
+              private searchService: SearchService, 
+              private sortService: SortService) { }
 
   setOrder(value: string) {
     this.reverse = !this.reverse;

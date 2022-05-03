@@ -14,7 +14,7 @@ export class SortService {
     this.sortValue.next(value);
   }
 
-  get sort(){
+  get sort() : any{
     return this.sort;
   }
 }

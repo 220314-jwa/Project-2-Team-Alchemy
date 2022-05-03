@@ -7,7 +7,7 @@ export class PageService {
 
   constructor() { }
 
-  setBodyBGHeight(changedContainer, compareContainer) {
+  setBodyBGHeight(changedContainer: string, compareContainer : string) {
 
     let repoHeight = 0;
     let currentBgHeight = 0;
