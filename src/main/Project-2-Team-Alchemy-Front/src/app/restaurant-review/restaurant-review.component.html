@@ -1,0 +1,19 @@
+<p>restaurant-review works!</p>
+<!-- if user is logged in syntax-->
+ 
+<form action="#">
+    <h2> Rate and Reviews </h2>
+       <input type = "text" name = "full-name" placeholder="Name">	<!-- or username syntax-->
+       <br/>
+       <textarea name = "" id = ""  cols="30" rows="10"  placeholder="Type Your Review..."> </textarea>		
+       <!--button (click)-"post() > Submit</button>		-->
+       <br/>
+       <br/>
+    </form>
+   
+   <div class="comment-section">
+       <div *ngFor-"let comments of postComment">
+           <p>{{comments}}</p>
+       </div>
+   </div>
+   
