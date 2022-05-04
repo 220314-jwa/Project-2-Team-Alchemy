@@ -1,9 +1,6 @@
-<div class="container search-container">
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="SEARCH" aria-label="Search Restaurants" 
-        aria-describedby="basic-addon2" [(ngModel)]="filter" (ngModelChange)="checkQuery($event)">
-        <div class="input-group-append">
-            <i class="fa fa-search search-icon"></i>
-        </div>
+<div>
+    <div>
+        <input type="text"  placeholder="Enter zip code, location, restaurant name, or cuisine" 
+         [(ngModel)]="searchContent">
     </div>
 </div>

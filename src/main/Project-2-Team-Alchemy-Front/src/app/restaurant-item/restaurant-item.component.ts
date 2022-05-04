@@ -1,6 +1,6 @@
 import { Component, ComponentRef, ElementRef, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { RestaurantInfo } from '../restaurant-info';
-import { RestaurantReviewService } from '../restaurant-review.service';
+import { RestaurantInfo } from '../models/restaurant-info';
+import { RestaurantReviewService } from '../services/restaurant-review.service';
 
 @Component({
   selector: 'app-restaurant-item',
