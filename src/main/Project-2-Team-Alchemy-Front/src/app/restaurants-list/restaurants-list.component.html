@@ -1,36 +1,7 @@
 <app-restaurants-list-search></app-restaurants-list-search>
 
-
-
-<div class="container-fluid board-container">
-  <div class="gamelist-title-bar">List of Restaurants</div>
-  <div class="row board-section">
-    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 news-box" *ngFor="let list of gameListData | orderBy: order:reverse:'case-insensitive' | filter:filter | paginate: { itemsPerPage: 10, currentPage:p }  ">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">
-            <a href="javascript:void(0)">
-              {{ list.restaurantName}}</a>
-            <span class="score">Rating :
-              <span> {{ list.aggregateRating }} </span>
-            </span>
-          </h5>
-          <span class="genre">Cuisines :
-            <span>{{ list.cuisines}}</span>
-          </span>
-          <span class="platform">Cost for Two :
-            <span> {{ list.averageCostForTtwo}} </span>
-          </span>
-          <span class="release_year">Votes :
-            <span> {{ list.votes}}</span>
-          </span>
-        </div>
-      </div>
-    </div>
-
-
-
-  </div>
-</div>
-
 <app-restaurants-list-pagination></app-restaurants-list-pagination>
+<!--
+<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 news-box" 
+*ngFor="let list of gameListData | orderBy: order : reverse : caseInsensitive
+ | searchText: filter : 'restaurantName' | paginate: { itemsPerPage: 10, currentPage:p }  "> -->
