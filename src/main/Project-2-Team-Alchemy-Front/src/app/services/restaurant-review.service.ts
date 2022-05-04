@@ -1,6 +1,6 @@
 import { ComponentRef, ElementRef, Injectable,ViewContainerRef  } from '@angular/core';
-import { RestaurantInfo } from './restaurant-info';
-import { RestaurantContentComponent } from './restaurant-content/restaurant-content.component';
+import { RestaurantInfo } from '../models/restaurant-info';
+import { RestaurantContentComponent } from '../restaurant-content/restaurant-content.component';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +24,7 @@ export class RestaurantReviewService {
     console.log(restaurantInfo);
     this.currentInfo = this.restaurantInfoContainer.createComponent(RestaurantContentComponent);
     this.currentInfo.instance.restaurantInfo = restaurantInfo;
-    this.restaurantMap.set(this.currentInfo.instance.restaurantInfo.id, this.currentInfo);
+  
   }
 
 

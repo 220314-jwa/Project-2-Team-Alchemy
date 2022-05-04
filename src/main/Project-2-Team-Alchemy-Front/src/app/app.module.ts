@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-<<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http'; 
-=======
-import {NgxPaginationModule} from 'ngx-pagination';
->>>>>>> 64fa22d4cf4d014cb959ac52476c1f564e31b764
+import { NgxPaginationModule} from 'ngx-pagination';
 import { BrowserModule } from '@angular/platform-browser';
+import { OrderModule } from 'ngx-order-pipe'; 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RestaurantReviewComponent } from './Review/restaurant-review/restaurant-review.component';
@@ -15,7 +14,7 @@ import { NavTabComponent } from './nav-tab/nav-tab.component';
 import { RestaurantReviewContainerComponent } from './restaurant-review-container/restaurant-review-container.component';
 import { ReviewContainerComponent } from './review-container/review-container.component';
 import { RestaurantContentComponent } from './restaurant-content/restaurant-content.component';
-import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
+import { RestaurantsListComponent } from './restaurants-list/restaurants-list.component';
 import { RestaurantItemComponent } from './restaurant-item/restaurant-item.component';
 import { RestaurantListAndReviewComponent } from './restaurant-list-and-review/restaurant-list-and-review.component';
 import { RestaurantRatingComponent } from './restaurant-rating/restaurant-rating.component';
@@ -30,6 +29,7 @@ import { UserService } from './services/user.service';
 import { RestaurantsListSearchComponent } from './restaurants-list-search/restaurants-list-search.component';
 import { RestaurantsListPaginationComponent } from './restaurants-list-pagination/restaurants-list-pagination.component';
 import { HeaderComponent } from './header/header.component';
+import { SearchTextPipe } from './pipe/search-text.pipe';
 
 
 @NgModule({
@@ -42,7 +42,7 @@ import { HeaderComponent } from './header/header.component';
     RestaurantReviewContainerComponent,
     ReviewContainerComponent,
     RestaurantContentComponent,
-    RestaurantListComponent,
+    RestaurantsListComponent,
     RestaurantItemComponent,
     RestaurantListAndReviewComponent,
     RestaurantRatingComponent,
@@ -53,7 +53,8 @@ import { HeaderComponent } from './header/header.component';
     SignupComponent,
     RestaurantsListSearchComponent,
     RestaurantsListPaginationComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchTextPipe
   ],
   imports: [
     BrowserModule,
@@ -63,7 +64,8 @@ import { HeaderComponent } from './header/header.component';
     NgModule,
     NgbModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    OrderModule
   ],
   providers: [
     UserService

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, ViewContainerRef } from '@angular/core';
-import { RestaurantInfo } from '../restaurant-info';
-import { RestaurantReview } from '../restaurant-review';
+import { RestaurantInfo } from '../models/restaurant-info';
+import { RestaurantReview } from '../models/restaurant-review';
 import { RestaurantReviewContainerComponent } from '../restaurant-review-container/restaurant-review-container.component';
 
 @Component({

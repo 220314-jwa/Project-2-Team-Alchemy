@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../services/api/api.service';
-import { PageService } from '../services/page/page.service';
+
 import { OrderPipe } from 'ngx-order-pipe';
-import { SearchService } from '../services/common/search.service';
-import { SortService } from '../services/common/sort.service';
 
 
 @Component({
@@ -13,39 +10,14 @@ import { SortService } from '../services/common/sort.service';
 })
 export class RestaurantsListSearchComponent implements OnInit {
 
-  gameListData: any;
-  filter: any;
-  p = 1;
-  order = 'restaurantName';
-  reverse = false;
-  sortedCollection!: any[];
+  searchContent : string;
 
-  constructor(private apiService: ApiService, 
-              private pageService: PageService, 
-              private orderPipe: OrderPipe, 
-              private searchService: SearchService, 
-              private sortService: SortService) { }
-
-  setOrder(value: string) {
-    this.reverse = !this.reverse;
-    this.sortService.sort = this.reverse;
-    console.log(value);
-    setTimeout(() => {
-      this.pageService.setBodyBGHeight('board-container', 'search-container');
-    }, 0);
-  }
-
-
-  checkQuery(filter: any) {
-    console.log(filter);
-    this.searchService.filter = filter;
-    setTimeout(() => {
-      this.pageService.setBodyBGHeight('board-container', 'search-container');
-    }, 0);
-  }
-
+  constructor( private orderPipe: OrderPipe
+  ) { }
 
   ngOnInit() {
   }
 
+
+  
 }
