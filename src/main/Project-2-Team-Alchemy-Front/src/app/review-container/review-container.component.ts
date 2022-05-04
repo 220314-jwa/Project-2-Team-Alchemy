@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { RestaurantReview } from '../restaurant-review';
+import { RestaurantReview } from '../models/restaurant-review';
 
 @Component({
   selector: 'app-review-container',

@@ -10,10 +10,14 @@ import { OrderPipe } from 'ngx-order-pipe';
 })
 export class RestaurantsListSearchComponent implements OnInit {
 
+  searchContent : string;
+
   constructor( private orderPipe: OrderPipe
   ) { }
 
   ngOnInit() {
   }
 
+
+  
 }
