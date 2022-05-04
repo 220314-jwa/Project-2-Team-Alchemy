@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
+<<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http'; 
+=======
+import {NgxPaginationModule} from 'ngx-pagination';
+>>>>>>> 64fa22d4cf4d014cb959ac52476c1f564e31b764
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +27,9 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
+import { RestaurantsListSearchComponent } from './restaurants-list-search/restaurants-list-search.component';
+import { RestaurantsListPaginationComponent } from './restaurants-list-pagination/restaurants-list-pagination.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -43,7 +50,10 @@ import { UserService } from './services/user.service';
     HomeImgTittleComponent,
     HomePageComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    RestaurantsListSearchComponent,
+    RestaurantsListPaginationComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +62,8 @@ import { UserService } from './services/user.service';
     HttpClientModule,
     NgModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [
     UserService
