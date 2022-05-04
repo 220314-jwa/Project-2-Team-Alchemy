@@ -1,5 +1,6 @@
-<div>
-    <p>restaurant-item works!</p>
-    <button *ngFor="let restaurantInfoExample of restaurantInfoExamples" (click)="showRestaurantInfo(restaurantInfoExample.id)">
-        {{restaurantInfoExample.id}} : {{restaurantInfoExample.restaurantName}}</button>
+<div (click)="showRestaurantInfo(restaurantInfo.id)">
+    <img src="https://skillz4kidzmartialarts.com/wp-content/uploads/2017/04/default-image-620x600.jpg"
+     class="restaurant-image-content">
+    <p>{{ restaurantInfo.name }}</p>
+    <p>{{ restaurantInfo.avgrating }}</p>
 </div>

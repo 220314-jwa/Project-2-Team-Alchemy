@@ -10,16 +10,22 @@ import { RestaurantReviewContainerComponent } from '../restaurant-review-contain
 })
 export class RestaurantContentComponent implements OnInit {
   examples : Array<RestaurantReview> = [
-    { username: 'example1',
-      reviewContent: 'The service was alright. The new waitress was amazing \
+    { users: 'example1',
+    reviewtext: 'The service was alright. The new waitress was amazing \
       and very sweet but the man who seemed like the restaurant owner greeted everyone \
       personally except me and my girlfriend, which we found offensive. The mussels were very \
       delicious but the chicken and braided salmon had literally no flavor or seasoning. Not worth the price.',
-      userRating: 'example1'
+      rating: 1,
+      reviewrating: 1,
+      datecreated: "mm-dd-yy",
+      restaurant_id: 1,
     },
-    { username: 'example2',
-    reviewContent: 'example2',
-    userRating: 'example2'
+    { users: 'example2',
+      reviewtext: 'example2',
+      rating: 1,
+      reviewrating: 1,
+      datecreated: "mm-dd-yy",
+      restaurant_id: 1,
     },
   ];
 

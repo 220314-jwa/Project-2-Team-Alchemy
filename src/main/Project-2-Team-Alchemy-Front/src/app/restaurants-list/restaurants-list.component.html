@@ -1,5 +1,8 @@
 <app-restaurants-list-search></app-restaurants-list-search>
 
 <!-- Don't use ng For here-->
+<div *ngFor="let restaurant of restaurantList;">
+    <app-restaurant-item [restaurantInfo]="restaurant"></app-restaurant-item>
+</div>
 
 <!-- <app-restaurants-list-pagination></app-restaurants-list-pagination> -->
