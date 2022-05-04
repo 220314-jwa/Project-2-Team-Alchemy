@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeImgTittleComponent } from './home-img-tittle/home-img-tittle.component';
+import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
 import { RestaurantListAndReviewComponent } from './restaurant-list-and-review/restaurant-list-and-review.component';
 
 const routes: Routes = [
   {
     path:'',
-    component: HomeImgTittleComponent
+    component: HomePageComponent
   },
   {
     path:'home',
-    component: HomeImgTittleComponent
+    component: HomePageComponent
   },
   {
     path:'restaurant-list',

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PaginationService } from '../services/common/pagination.service';
 
 @Component({
   selector: 'app-restaurants-list-pagination',
@@ -8,14 +7,13 @@ import { PaginationService } from '../services/common/pagination.service';
 })
 export class RestaurantsListPaginationComponent implements OnInit {
 
-  constructor(private paginationService: PaginationService) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
   pageChanged($event: any){
     console.log($event);
-    this.paginationService.pagination = $event; 
   }
 
 }
