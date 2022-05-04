@@ -1,14 +1,12 @@
 export class RestaurantReview {
-    public username: String;
-    public reviewContent: String;
-    public userRating: String;
+
     constructor(
-        username: String,
-        reviewContent: String,
-        userRating: String
+        public users: String,
+        public rating: number,
+        public reviewtext: String,
+        public reviewrating: number,
+        public datecreated: string,
+        public restaurant_id: number
     ){
-        this.username = username;
-        this.reviewContent = reviewContent;
-        this.userRating = userRating;
     }
 }

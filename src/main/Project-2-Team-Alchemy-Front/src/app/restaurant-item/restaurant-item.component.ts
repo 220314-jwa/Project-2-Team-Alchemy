@@ -1,4 +1,4 @@
-import { Component, ComponentRef, ElementRef, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ComponentRef, ElementRef, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { RestaurantInfo } from '../models/restaurant-info';
 import { RestaurantReviewService } from '../services/restaurant-review.service';
 
@@ -8,7 +8,7 @@ import { RestaurantReviewService } from '../services/restaurant-review.service';
   styleUrls: ['./restaurant-item.component.css']
 })
 export class RestaurantItemComponent implements OnInit {
-
+/*
   restaurantInfoExamples : Array<RestaurantInfo> = [{
     id:0,
 		restaurantName: 'Panera Bread',
@@ -29,7 +29,10 @@ export class RestaurantItemComponent implements OnInit {
 	}
 
   ];
-
+  */
+  @Input()
+  restaurantInfo: RestaurantInfo;
+  
   constructor(private restaurantReviewService : RestaurantReviewService) { }
 
   ngOnInit(): void {
@@ -48,6 +51,7 @@ export class RestaurantItemComponent implements OnInit {
   */
   //Example for debugging purposes
   showRestaurantInfo(id: number){
-    this.restaurantReviewService.createRestaurantInfo(this.restaurantInfoExamples[id]);
+    //this.restaurantReviewService.createRestaurantInfo(this.restaurantInfoExamples[id]);
+    this.restaurantReviewService.createRestaurantInfo(this.restaurantInfo);
   }
 }
