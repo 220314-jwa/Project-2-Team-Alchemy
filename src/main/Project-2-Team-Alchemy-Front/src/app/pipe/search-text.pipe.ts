@@ -5,19 +5,19 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchTextPipe implements PipeTransform {
 
-  transform(items: any[], searchText: string, fieldName: string): any[] {
+  transform(restaurantItems: any[], searchText: string, fieldName: string): any[] {
 
     // return empty array if array is falsy
-    if (!items) { return []; }
+    if (!restaurantItems) { return []; }
 
     // return the original array if search text is empty
-    if (!searchText) { return items; }
+    if (!searchText) { return restaurantItems; }
 
     // convert the searchText to lower case
     searchText = searchText.toLowerCase();
 
     // retrun the filtered array
-    return items.filter(item => {
+    return restaurantItems.filter(item => {
       if (item && item[fieldName]) {
         return item[fieldName].toLowerCase().includes(searchText);
       }

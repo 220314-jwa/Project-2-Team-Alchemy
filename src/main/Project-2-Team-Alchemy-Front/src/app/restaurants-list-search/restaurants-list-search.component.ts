@@ -10,13 +10,6 @@ import { OrderPipe } from 'ngx-order-pipe';
 })
 export class RestaurantsListSearchComponent implements OnInit {
 
-  gameListData: any;
-  filter: any;
-  p = 1;
-  order = 'restaurantName';
-  reverse = false;
-  sortedCollection!: any[];
-
   constructor( private orderPipe: OrderPipe
   ) { }
 

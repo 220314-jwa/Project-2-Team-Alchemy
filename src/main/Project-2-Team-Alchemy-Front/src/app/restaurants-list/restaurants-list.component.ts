@@ -10,14 +10,6 @@ import { OrderPipe } from 'ngx-order-pipe';
 })
 export class RestaurantsListComponent implements OnInit {
 
-  gameListData: any;
-  filter: any;
-  p = 1;
-  order = 'title';
-  reverse = false;
-  caseInsensitive = false;
-  sortedCollection!: any[];
-
   constructor(
     private orderPipe: OrderPipe) { }
 
