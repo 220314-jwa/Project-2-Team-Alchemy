@@ -6,9 +6,6 @@ import { OrderModule } from 'ngx-order-pipe';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RestaurantReviewComponent } from './Review/restaurant-review/restaurant-review.component';
-import { UserReviewComponent } from './Review/user-review/user-review.component';
-import { ReviewModule } from './Review/restaurant-review.module';
 import { RestaurantInfoContainerComponent } from './restaurant-info-container/restaurant-info-container.component';
 import { NavTabComponent } from './nav-tab/nav-tab.component';
 import { RestaurantReviewContainerComponent } from './restaurant-review-container/restaurant-review-container.component';
@@ -35,8 +32,6 @@ import { SearchTextPipe } from './pipe/search-text.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    RestaurantReviewComponent,
-    UserReviewComponent,
     RestaurantInfoContainerComponent,
     NavTabComponent,
     RestaurantReviewContainerComponent,
@@ -59,7 +54,6 @@ import { SearchTextPipe } from './pipe/search-text.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReviewModule,
     HttpClientModule,
     NgModule,
     NgbModule,
