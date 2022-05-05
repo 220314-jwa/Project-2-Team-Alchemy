@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { HomeImgTittleComponent } from './home-img-tittle/home-img-tittle.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
 import { RestaurantListAndReviewComponent } from './restaurant-list-and-review/restaurant-list-and-review.component';
