@@ -7,18 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantReviewComponent implements OnInit {
 
-  comment = " ";		//Header display fr comment section, had rev typed in
-  postComment = [];
-  
-  
-  post()	{
-    this.postComment.push(this.comment);  
-    this.comment = "";
-  }
-  
-  constructor() { }
+  ngOnInit(){
 
-  ngOnInit(): void {
-  }
+	}
 
+title :"Reviews";
+  displayVal:any='';
+
+  getValue(val:any)
+  {
+      console.log(val);
+      this.displayVal=(val);
+      
+  }
 }

@@ -28,6 +28,7 @@ import { RestaurantsListSearchComponent } from './restaurants-list-search/restau
 import { RestaurantsListPaginationComponent } from './restaurants-list-pagination/restaurants-list-pagination.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchTextPipe } from './pipe/search-text.pipe';
+import { RestaurantReviewComponent } from './restaurant-review/restaurant-review.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { SearchTextPipe } from './pipe/search-text.pipe';
     RestaurantsListComponent,
     RestaurantItemComponent,
     RestaurantListAndReviewComponent,
+    RestaurantReviewComponent,
     RestaurantRatingComponent,
     NavBarComponent,
     HomeImgTittleComponent,
