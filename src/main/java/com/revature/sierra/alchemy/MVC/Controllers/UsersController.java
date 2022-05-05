@@ -1,32 +1,33 @@
 package com.revature.sierra.alchemy.MVC.Controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.revature.sierra.alchemy.MVC.Models.Users;
+import com.revature.sierra.alchemy.MVC.Service.UserService;
+
+
 @RestController
-@RequestMapping(path="/users") 
-@CrossOrigin(origins="http://localhost:4200") 
+@Controller
+@CrossOrigin(origins="http://localhost:4200") // This localhost will be changed to AWS DB path
 public class UsersController {
-	
-	@GetMapping
-	public ResponseEntity<Integer> getUser(){
-		Integer a = 1;
-		return ResponseEntity.ok(a);
+	// connect UserService
+	private UserService userServ;
+	//connecting the userservice to the controller class with a dependency injection
+	@Autowired
+	public UsersController(UserService userServ) {
+		this.userServ = userServ;
 	}
 	
-	@PutMapping(path="/{userID}")
-	public ResponseEntity<Integer> getUserById(@PathVariable int userID){
-		return ResponseEntity.ok(1);
-	}
+	@GetMapping(path="/login")
+public ResponseEntity<List<Users>> getUser() {
+		List<Users> user = this.userServ.getLogIn();
+		return ResponseEntity.ok(user);
 }
