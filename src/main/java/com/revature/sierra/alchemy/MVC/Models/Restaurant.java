@@ -23,7 +23,7 @@ public class Restaurant {
 	@Column
 	private String address;
 	@Column
-	private int phone;
+	private String phone;
 	@Column
 	private String description;
 	@Column
@@ -33,7 +33,7 @@ public class Restaurant {
 		id = 0;
 		name ="";
 		address ="";
-		phone = 0;
+		phone = "";
 		description ="";
 		avgrating = 0.0;
 		
@@ -65,11 +65,12 @@ public class Restaurant {
 		this.address = address;
 	}
 
-	public int getPhone() {
+	
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
@@ -81,11 +82,13 @@ public class Restaurant {
 		this.description = description;
 	}
 
-	public int getAvgrating() {
+	
+
+	public double getAvgrating() {
 		return avgrating;
 	}
 
-	public void setAvgrating(int avgrating) {
+	public void setAvgrating(double avgrating) {
 		this.avgrating = avgrating;
 	}
 
