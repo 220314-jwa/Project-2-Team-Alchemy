@@ -6,11 +6,15 @@
         </div>
         <div class="restaurant-info-container">
             <div class="restaurant-name">{{restaurantInfo.name}}</div>
-            <app-restaurant-rating [ratingValue]="4" [maxValue]="5" [readOnly]="false"></app-restaurant-rating>
-            <div class="restaurant-rating restaurant-content" >{{restaurantInfo.avgrating}}</div>
+            <div>
+                <app-restaurant-rating [ratingValue]="4" [maxValue]="5" [readOnly]="false"></app-restaurant-rating>
+                <div class="restaurant-rating restaurant-content" >{{restaurantInfo.avgrating}}</div>
+            </div>
             <div class="restaurant-description restaurant-content">{{restaurantInfo.description}}</div>
             <div class="btn-container">
                 <button (click)="loadUserReviews()">Review</button>
+                <button (click)="loadWriteReview()">Write Review</button>
+
             </div>
         </div>
     </div>

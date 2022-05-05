@@ -47,6 +47,10 @@ export class RestaurantContentComponent implements OnInit {
     
   }
 
+  loadWriteReview(){
+    
+  }
+
   loadUserReviews(){
     //Need a fetch request to grab from database
     this.reviewComponent.clear();
