@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'; 
-import { NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserModule } from '@angular/platform-browser';
 import { OrderModule } from 'ngx-order-pipe';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,7 +27,6 @@ import { RestaurantsListSearchComponent } from './restaurants-list-search/restau
 import { RestaurantsListPaginationComponent } from './restaurants-list-pagination/restaurants-list-pagination.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchTextPipe } from './pipe/search-text.pipe';
-import { RestaurantReviewComponent } from './restaurant-review/restaurant-review.component';
 
 
 @NgModule({
@@ -42,7 +40,6 @@ import { RestaurantReviewComponent } from './restaurant-review/restaurant-review
     RestaurantsListComponent,
     RestaurantItemComponent,
     RestaurantListAndReviewComponent,
-    RestaurantReviewComponent,
     RestaurantRatingComponent,
     NavBarComponent,
     HomeImgTittleComponent,
@@ -57,8 +54,6 @@ import { RestaurantReviewComponent } from './restaurant-review/restaurant-review
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    NgModule,
     NgbModule,
     FormsModule,
     NgxPaginationModule,
