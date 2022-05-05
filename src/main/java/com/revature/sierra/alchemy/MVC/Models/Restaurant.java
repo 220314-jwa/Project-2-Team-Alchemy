@@ -27,7 +27,7 @@ public class Restaurant {
 	@Column
 	private String description;
 	@Column
-	private int avgrating;
+	private double avgrating;
 	
 	public Restaurant() {
 		id = 0;
@@ -35,7 +35,7 @@ public class Restaurant {
 		address ="";
 		phone = 0;
 		description ="";
-		avgrating = 0;
+		avgrating = 0.0;
 		
 		
 		
