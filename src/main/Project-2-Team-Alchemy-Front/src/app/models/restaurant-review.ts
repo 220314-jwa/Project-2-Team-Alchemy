@@ -1,6 +1,7 @@
 export class RestaurantReview {
 
     constructor(
+        public reviewId: number,
         public users: String,
         public rating: number,
         public reviewtext: String,
