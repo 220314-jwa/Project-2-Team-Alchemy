@@ -28,6 +28,10 @@ public class UsersController {
 	
 	@GetMapping(path="/login")
 public ResponseEntity<List<Users>> getUser() {
-		List<Users> user = userServ.getLogIn();
+		List<Users> user = (List<Users>) userServ.getLogIn();
 		return ResponseEntity.ok(user);
+
+	}
+	
 }
+
