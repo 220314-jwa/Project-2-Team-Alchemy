@@ -16,7 +16,7 @@ export class ReviewContainerComponent implements OnInit {
   }
 
   checkAnonymous(){
-    if(this.reviewData.username == "anonymous") return true;
+    if(this.reviewData.users == "anonymous") return true;
     return false;
   }
 

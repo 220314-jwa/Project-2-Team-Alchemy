@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'; 
 import { NgxPaginationModule} from 'ngx-pagination';
 import { BrowserModule } from '@angular/platform-browser';
-import { OrderModule } from 'ngx-order-pipe'; 
-
+import { OrderModule } from 'ngx-order-pipe';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { RestaurantInfoContainerComponent } from './restaurant-info-container/restaurant-info-container.component';
 import { NavTabComponent } from './nav-tab/nav-tab.component';
@@ -59,7 +60,8 @@ import { SearchTextPipe } from './pipe/search-text.pipe';
     NgbModule,
     FormsModule,
     NgxPaginationModule,
-    OrderModule
+    OrderModule,
+    HttpClientModule
   ],
   providers: [
     UserService

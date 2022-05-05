@@ -1,5 +1,16 @@
 <div>
+<<<<<<< HEAD
     <div>
         <input type="text"  placeholder="Enter zip code, location, restaurant name, or cuisine">
     </div>
 </div>
+=======
+    <form (submit)="submitSearch()">
+        <div>
+            <input type="text"  placeholder="Enter restaurant name" [(ngModel)]="searchContent"
+            [ngModelOptions]="{standalone: true}">
+            <button type="submit">Search</button>
+        </div>
+    </form>
+</div>
+>>>>>>> 12f932e6a9b563eb5eb6783211f7d18dfd6e74b9

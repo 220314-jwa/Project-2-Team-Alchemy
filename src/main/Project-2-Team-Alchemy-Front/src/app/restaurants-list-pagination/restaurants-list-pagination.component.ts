@@ -11,8 +11,5 @@ export class RestaurantsListPaginationComponent implements OnInit {
 
   ngOnInit() {
   }
-  pageChanged($event: any){
-    console.log($event);
-  }
 
 }
