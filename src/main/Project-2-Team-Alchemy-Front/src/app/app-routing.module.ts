@@ -5,7 +5,7 @@ import { HomeImgTittleComponent } from './home-img-tittle/home-img-tittle.compon
 import { SignupComponent } from './signup/signup.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
-import { RestaurantListAndReviewComponent } from './restaurant-list-and-review/restaurant-list-and-review.component';
+import { RestaurantsListComponent } from './restaurants-list/restaurants-list.component';
 
 const routes: Routes = [
   {
@@ -18,7 +18,7 @@ const routes: Routes = [
   },
   {
     path:'restaurant-list',
-    component:RestaurantListAndReviewComponent
+    component:RestaurantsListComponent
   },
   {
     path:'login',
