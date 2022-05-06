@@ -13,7 +13,6 @@ import { ReviewContainerComponent } from './review-container/review-container.co
 import { RestaurantContentComponent } from './restaurant-content/restaurant-content.component';
 import { RestaurantsListComponent } from './restaurants-list/restaurants-list.component';
 import { RestaurantItemComponent } from './restaurant-item/restaurant-item.component';
-import { RestaurantListAndReviewComponent } from './restaurant-list-and-review/restaurant-list-and-review.component';
 import { RestaurantRatingComponent } from './restaurant-rating/restaurant-rating.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -40,7 +39,6 @@ import { RestaurantReviewComponent } from './restaurant-review/restaurant-review
     RestaurantContentComponent,
     RestaurantsListComponent,
     RestaurantItemComponent,
-    RestaurantListAndReviewComponent,
     RestaurantRatingComponent,
     NavBarComponent,
     HomeImgTittleComponent,
