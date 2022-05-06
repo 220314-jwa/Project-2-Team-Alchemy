@@ -29,7 +29,7 @@ export class RestaurantRatingComponent implements OnInit {
   }
 
   getValue(){
-    console.log(this.ratingValue);
+    return this.ratingValue;
   }
 
   updateRating(event: number){
