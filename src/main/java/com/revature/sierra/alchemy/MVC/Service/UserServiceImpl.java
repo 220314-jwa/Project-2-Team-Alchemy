@@ -1,5 +1,6 @@
 package com.revature.sierra.alchemy.MVC.Service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.sierra.alchemy.MVC.Daos.UserRepo;
@@ -10,6 +11,7 @@ public class UserServiceImpl implements UserService {
 
 	private UserRepo userRepo;
 	
+	@Autowired
 	public UserServiceImpl(UserRepo userRepo) {
 		this.userRepo = userRepo;
 	}
