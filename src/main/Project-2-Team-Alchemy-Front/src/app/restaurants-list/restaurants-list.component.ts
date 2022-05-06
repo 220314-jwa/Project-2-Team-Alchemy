@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderPipe } from 'ngx-order-pipe';
 import { RestaurantInfo } from '../models/restaurant-info';
+import { RestaurantReviewService } from "../services/restaurant-review.service";
 
 
 @Component({
