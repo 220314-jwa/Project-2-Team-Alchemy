@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef, ViewContainerRef } fro
 import { RestaurantInfo } from '../models/restaurant-info';
 import { RestaurantReview } from '../models/restaurant-review';
 import { RestaurantReviewContainerComponent } from '../restaurant-review-container/restaurant-review-container.component';
+import { RestaurantReviewComponent } from '../restaurant-review/restaurant-review.component';
 
 @Component({
   selector: 'app-restaurant-content',
@@ -45,6 +46,11 @@ export class RestaurantContentComponent implements OnInit {
 
   fetchData(){
     
+  }
+
+  loadWriteReview(){
+    this.reviewComponent.clear();
+    var reviewComponent = this.reviewComponent.createComponent(RestaurantReviewComponent);
   }
 
   loadUserReviews(){

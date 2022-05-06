@@ -1,8 +1,10 @@
 header {
-    width: 100%;
-    height: 5%;
-    background-color: #E7cc8f;
-    border-bottom: 1px solid #48120e;
+    max-height:max-content;
+	height:auto;
+	width: 100%;
+	background-color: #E7cc8f;
+    border-bottom: 4px solid #48120e;
+    
 }
 .nav-img {
     float: left;
@@ -10,7 +12,8 @@ header {
     padding-left: 3%;
 }
 .img-nav{
-	max-height: 50px;
+	padding-bottom: 2%;
+	max-height: 80px;
 }
 .logo {
     color: #fff;
@@ -27,6 +30,9 @@ nav {
 	width: 50%;
 	text-align: right;
 	margin-right: 25px;
+	
+	
+	
 }
 header nav ul {
 	list-style: none;
@@ -35,17 +41,18 @@ header nav ul {
 nav ul li {
 	float: left;
 	color: #FFFFFF;
-	font-size: 14px;
+	font-size: 16px;
 	text-align: left;
 	margin-right: 25px;
 	letter-spacing: 2px;
 	font-weight: bold;
 	transition: all 0.3s linear;
+	padding-top: 5%;
 }
 ul li a {
 	color: #FFFFFF;
 	text-decoration: none;
 }
-ul li:hover a {
-	color: #2C9AB7;
+li:hover {
+	color: #2C9AB7 !important;
 }
