@@ -83,7 +83,6 @@ public class Restaurant {
 	}
 
 	
-
 	public double getAvgrating() {
 		return avgrating;
 	}
