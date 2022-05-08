@@ -1,5 +1,6 @@
 package com.revature.sierra.alchemy.MVC.Models;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Objects;
 
@@ -12,7 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Reviews {
+public class Reviews implements Serializable {
 	@Id
 	@OneToOne
 	@JoinColumn(name="Restaurant_id")
