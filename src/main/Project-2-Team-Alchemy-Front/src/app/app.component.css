@@ -1,0 +1,18 @@
+body {
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+    background-color: #f8f3e6;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-style: normal;
+    font-weight: 200;
+    height: auto;
+}
+
+.container {
+	width: auto;
+	min-height: 900px;
+	height: auto;
+	background-color: #f8f3e6;
+}

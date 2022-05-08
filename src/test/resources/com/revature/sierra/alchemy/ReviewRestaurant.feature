@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @ReviewRestaurant
 Feature: Leaving a review
   I want to use this template for my feature file
@@ -25,3 +26,20 @@ Feature: Leaving a review
     And The the customer will be redirected to the review page to view the posted reviews
     
   
+=======
+
+@ReviewRestaurant
+Feature: Review a Restaurant
+	
+	Scenario: A user is writing a review
+		Given The user is on "list" page
+		When The user click on a restuarant
+		And the user clicks the "review" section
+		And the user clicks on "write a review"
+		And the user inputs the review in text area
+		And the user clicks submit
+		Then the app submits the review
+		And the app updates the restaurant review
+
+	
+>>>>>>> 237e9ec70b689c773b8695bf45f341e4393f27c9
