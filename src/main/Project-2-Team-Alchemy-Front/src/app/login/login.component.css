@@ -28,13 +28,13 @@ h1 {
     border: none;
     margin-bottom: 15px;
     color: #fff ;
-    background: #48120E;
+    background: #fff;
     padding: 20px;
     font-size: 16px;
     font-weight: bolder;
     border-radius: 10px;
-    box-shadow: inset 5px 5px 5px #444242, 
-            inset -5px -5px 5px #292929;
+    box-shadow: inset 5px 5px 5px rgb(70, 69, 69), 
+            inset -5px -5px 5px #000;
     outline: none;
 }
 textarea{

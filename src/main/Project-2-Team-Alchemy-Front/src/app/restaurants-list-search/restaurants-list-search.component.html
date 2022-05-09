@@ -1,9 +1,9 @@
-<div>
+<div class="searchContainer"> 
     <form (submit)="submitSearch()">
         <div>
-            <input type="text"  placeholder="Enter restaurant name" [(ngModel)]="searchContent"
+            <input class="inputSearch" type="text"  placeholder="Enter restaurant name" [(ngModel)]="searchContent"
             [ngModelOptions]="{standalone: true}">
-            <button type="submit">Search</button>
+            <button class="btnSearch" type="submit">Search</button>
         </div>
     </form>
 </div>

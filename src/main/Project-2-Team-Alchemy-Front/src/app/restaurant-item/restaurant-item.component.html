@@ -1,6 +1,11 @@
-<div (click)="showRestaurantInfo(restaurantInfo.id)">
-    <img src="https://skillz4kidzmartialarts.com/wp-content/uploads/2017/04/default-image-620x600.jpg"
-     class="restaurant-image-content">
-    <p>{{ restaurantInfo.name }}</p>
-    <app-restaurant-rating [ratingValue]="restaurantInfo.avgrating" [maxValue]="5" [readOnly]="true"></app-restaurant-rating>
+
+<div class="restaurntContainer" (click)="showRestaurantInfo(restaurantInfo.id)">
+   <div class="img-container">
+        <img src="../../assets/default-image-620x600.jpg"
+            class="restaurant-image-content">
+    </div>
+    <div class="info-container">
+        <p>{{ restaurantInfo.name }}</p>
+        <app-restaurant-rating [ratingValue]="restaurantInfo.avgrating" [maxValue]="5" [readOnly]="true"></app-restaurant-rating>
+    </div>
 </div>

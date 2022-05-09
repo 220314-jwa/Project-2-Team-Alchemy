@@ -1,36 +1,43 @@
-.restaurant-info-container{
-    flex-direction: column;
-    align-items: left;
-    border: 1px solid black;
-    display: flex;
-    padding-left: 25px;
-    padding-right: 25px;
-}
 
 .restaurant-outer-container{
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
 }
+.restaurant-info-container{
+    
+    flex-direction: column;
+    align-items: left;
+    display: flex;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 0px 10px 10px 0px;
+}
+
 
 .restaurant-name{
     font-size: 35px;
     margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .restaurant-inner-container{
     flex-direction: row;
     display: flex;
-    width: 800px;
+    max-width: 900px;
     height: auto;
-    border: 1px solid black;
+    border: 2px solid #48120E;
+    box-shadow: 4px 4px 15px #202020;
+    border-radius: 10px;
 }
 
 .restaurant-image-content{
     padding:5px;
     height: auto;
     width: 240px;
+    margin: 10px;
 }
 
 .restaurant-content{
@@ -41,4 +48,23 @@
 .btn-container{
     padding-top: 15px;
     margin-bottom: 15px;
+}
+
+.btn-review{
+    border-radius: 5px;
+    color: #fff;
+    background-color: #48120E;
+	padding:10px 15px;
+	box-shadow:  4px 4px 15px #202020;
+    font-weight: 500;
+    margin-right: 15px;
+}
+.btn-review:hover{
+    background-color: #e7cc8f;
+    color: #202020 ;
+}
+
+.btn-review:active{
+    background-color: #e7cc8f;
+    transform: translateY(4px);
 }
