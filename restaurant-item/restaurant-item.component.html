@@ -1,0 +1,11 @@
+
+<div class="restaurntContainer" (click)="showRestaurantInfo(restaurantInfo.id)">
+   <div class="img-container">
+        <img src="../../assets/default-image-620x600.jpg"
+            class="restaurant-image-content">
+    </div>
+    <div class="info-container">
+        <p>{{ restaurantInfo.name }}</p>
+        <app-restaurant-rating [ratingValue]="restaurantInfo.avgrating" [maxValue]="5" [readOnly]="true"></app-restaurant-rating>
+    </div>
+</div>

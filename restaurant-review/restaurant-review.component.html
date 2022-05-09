@@ -1,0 +1,13 @@
+<div class="write-review-container">
+    <h3>Write A Review</h3>
+        <aside #box>
+            <app-restaurant-rating class="review-star-rating" [ratingValue]="restaurantReview.rating" [maxValue]="5" 
+                [readOnly]="false" #rating></app-restaurant-rating>
+                <br>
+            <textarea class="text-area" name ="reviewText" [(ngModel)]="restaurantReview.reviewtext" 
+                placeholder="Type Your Review..."></textarea>
+        </aside>
+      <div class="btn-sub-div">
+    <input class="btn-submit" type = "submit" value="Submit" (click)="submitReview()"/>
+    </div>
+</div>

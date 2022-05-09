@@ -1,0 +1,9 @@
+
+body {
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+    background-color: #f8f3e6;
+    font-style: normal;
+    font-weight: 200;
+    min-height:100vmax;
+    height: 100%;
+}
