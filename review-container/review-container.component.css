@@ -1,0 +1,29 @@
+
+.review-container{
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    height:auto;
+    width: 900px;
+    border-bottom: 4px solid #48120E;
+    margin-bottom: 10px;
+    background-color: #e3c77e96;
+    border-radius: 5px;
+}
+
+.review-username{
+  margin-left:20px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.star-review{
+ margin-left: 15px;
+}
+
+
+.review-reviewcontent{
+    margin: 20px;
+    font-size: 16px;
+}
