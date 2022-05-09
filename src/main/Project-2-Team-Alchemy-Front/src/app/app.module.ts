@@ -11,7 +11,7 @@ import { RestaurantInfoContainerComponent } from './restaurant-info-container/re
 import { RestaurantReviewContainerComponent } from './restaurant-review-container/restaurant-review-container.component';
 import { ReviewContainerComponent } from './review-container/review-container.component';
 import { RestaurantContentComponent } from './restaurant-content/restaurant-content.component';
-import { RestaurantsListComponent } from './restaurants-list/restaurants-list.component';
+import { RestaurantsListComponent } from './restaurants-list/restaurants-list-.component';
 import { RestaurantItemComponent } from './restaurant-item/restaurant-item.component';
 import { RestaurantRatingComponent } from './restaurant-rating/restaurant-rating.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';

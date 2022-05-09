@@ -1,57 +1,50 @@
-body
-{
-	padding: 0;
+
+.write-review-container{
+	padding-left:15px;
+    padding-right:15px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    height:auto;
+    width: 900px;
+    border-bottom: 4px solid #48120E;
+    margin-bottom: 10px;
+	margin-top: 15px;
+    background-color: #e3c77e96;
+    border-radius: 5px;
+}
+
+h3{
+	padding: 10px;
 	margin: 0;
-	background-color: #eee;
-
-}
-.form{
-	top:	50%;
-	left:	50%;
-	position:	absolute;
-	transform:	translate(-50%, 50%);
-	width: 500px;
-}
-.form h2{
-	font-size: 20px;
-	margin-bottom: 15px;
 }
 
-.form input{
-	width: 100px;
-	height: 50px;
-	padding: 0 20px;
-	margin-bottom: 15px;
-	border-radius: 5px;
-	border: 1px solid #e7cc8f;
+.review-star-rating{
+	padding: 10px;
 }
 
-.form input:focus{
-	border: 1px solid #48120e;
-	outline: 0;
+.text-area{
+	width: -webkit-fill-available;
+	height: 10em;
+}
+.btn-sub-div{
+	margin-left:80%;
+}
+.btn-submit{
+    border-radius: 5px;
+    color: #fff;
+    background-color: #48120E;
+	padding:10px 15px;
+	box-shadow:  4px 4px 15px #202020;
+    font-weight: 500;
+	right: 0;
+}
+.btn-submit:hover{
+    background-color: #e7cc8f;
+    color: #202020 ;
 }
 
-.form textarea{
-	width: 100px;
-	height: 150px;
-	padding: 15px 20px;
-	margin-bottom: 10px;
-	border-radius: 5px;
-	border: 1px solid #e7cc8f;
+.btn-submit:active{
+    background-color: #e7cc8f;
+    transform: translateY(4px);
 }
-
-.form textarea:focus{
-	border: 1px solid #48120e;
-	outline: 0;
-}
-
-.form button{
-	border: 0;
-	padding: 10px 30px;
-	background: #e7cc8f;
-	font-size: 18px;
-	border-radius: 5px; 
-	color: #f8f3e6;
-}
-
 
