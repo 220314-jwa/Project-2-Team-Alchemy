@@ -26,8 +26,9 @@ public class UsersController {
 		this.userServ = userServ;
 	}
 	
-	@GetMapping(path="/login")
-public ResponseEntity<List<Users>> getUser() {
-		List<Users> user = this.userServ.getLogIn();
-		return ResponseEntity.ok(user);
+	//@GetMapping(path="/login")
+//public ResponseEntity<List<Users>> getUser() {
+	//	List<Users> user = this.userServ.getLogIn();
+//		return ResponseEntity.ok(user);
+//}
 }
