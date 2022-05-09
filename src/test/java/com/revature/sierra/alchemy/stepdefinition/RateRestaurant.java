@@ -8,15 +8,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
-
-import com.revature.sierra.alchemy.page.examplePage;
-
 import java.io.File;
 import java.time.Duration;
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.runner.RunWith;
-
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -39,7 +34,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(features={"./src/test/java/resources/com/revature/sierra/alchemy/RateRestaurant.feature"}, glue={"com.revature.sierra.alchemy"}, tags="@RateRestaurant")
 public class RateRestaurant {
 	static WebDriver driver;
-	static examplePage page;
+
 	
 	@FindBy(id="example")
 	WebElement departmentId;
@@ -77,7 +72,7 @@ public class RateRestaurant {
 
 */
 		
-		page = new examplePage(driver);
+		
 	}
 	
 	@AfterAll

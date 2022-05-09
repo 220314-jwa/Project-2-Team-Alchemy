@@ -18,6 +18,22 @@ public class HomePage {
 		this.driver = driver;
 	}
 	
+	public void clickHome() {
+		driver.findElement(By.xpath("/html/body/app-root/div/div/app-nav-bar/header/div[2]/nav/ul/li[1]")).click();
+	}
+	public void clickRestaurant() {
+		driver.findElement(By.xpath("/html/body/app-root/div/div/app-nav-bar/header/div[2]/nav/ul/li[2]")).click();
+	}
+	public void clickLogIn() {
+		driver.findElement(By.xpath("/html/body/app-root/div/div/app-nav-bar/header/div[2]/nav/ul/li[3]")).click();
+	}
+	public void clickSignUp() {
+		driver.findElement(By.xpath("/html/body/app-root/div/div/app-nav-bar/header/div[2]/nav/ul/li[4]")).click();
+	}
+		
+	
+	
+	//Not relevant but here of review
 	public void submitById(String id) {
 		driver.findElement(By.id(id)).submit();
 	}
