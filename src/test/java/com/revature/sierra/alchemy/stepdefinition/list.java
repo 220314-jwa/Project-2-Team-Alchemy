@@ -9,9 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
-
-import com.revature.sierra.alchemy.page.examplePage;
-
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -24,7 +21,6 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(features={"./src/test/java/resources/com/revature/sierra/alchemy/RateRestaurant.feature"}, glue={"com.revature.sierra.alchemy"}, tags="@RateRestaurant")
 	public class list {
 		static WebDriver driver;
-		static examplePage page;
 		
 		@FindBy(id="example")// Restaurant List
 		WebElement departmentId; // City
@@ -47,7 +43,6 @@ import io.cucumber.junit.CucumberOptions;
 			driver.get("www.google.com");
 
 			
-			page = new examplePage(driver);
 		}
 		
 		@AfterAll

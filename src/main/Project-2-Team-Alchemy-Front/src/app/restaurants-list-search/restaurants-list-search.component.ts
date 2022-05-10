@@ -20,6 +20,8 @@ export class RestaurantsListSearchComponent implements OnInit {
 
   submitSearch(){
     this.dataService.getRestaurantsBySearchForm(this.searchContent);
+    //Submit fetch request here
+
   }
 
 }

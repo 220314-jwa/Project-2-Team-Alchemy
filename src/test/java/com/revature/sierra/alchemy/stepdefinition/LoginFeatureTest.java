@@ -1,6 +1,15 @@
 package com.revature.sierra.alchemy.stepdefinition;
 
+import static org.junit.Assert.assertTrue;
+
+import java.io.File;
+
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.cucumber.java.en.Given;
@@ -13,16 +22,25 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features={"./src/test/java/resources/com/revature/sierra/alchemy/Login.feature"}, glue={"com.revature.sierra.alchemy"}, tags="@Login")
 public class LoginFeatureTest {
+	
+	public static SetUp setUp;
+	
+	@BeforeAll
+	public static void Setup() {
+		setUp = new SetUp();
+	}
+	
+	
+	
 	@Given("user arrives at the homepage")
 	public void user_arrives_at_the_homepage() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		setUp.pageController.homePage.clickHome();
 	}
 
 	@When("user clicks on member sign on button")
 	public void user_clicks_on_member_sign_on_button() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    // We are going to Login Page
+		setUp.pageController.homePage.clickLogIn();
 	}
 
 	@When("user inputs {string} on username text field")
@@ -52,7 +70,7 @@ public class LoginFeatureTest {
 	@Then("user is alerted that user is signed in")
 	public void user_is_alerted_that_user_is_signed_in() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		assertTrue(setUp.pageController.loginPage.getLoginSession() == "username");
 	}
 
 	@Then("sign in fails and asks user to retry credentials")

@@ -5,15 +5,8 @@
     width: inherit;
     padding-left: 10%;
     padding-right: 10%;
-    /*
-        Wait till scheme is established
-        Can also try:
-        #EBDDE4
-        #EBEBDD
-        #DDEBE4
-        #DDEBDD
-        #a05f66
-    */
-    background-color: #efa06c; 
-
+    margin-top: 20px;
+    max-width: 900px;
+    height: auto;
+    
 }

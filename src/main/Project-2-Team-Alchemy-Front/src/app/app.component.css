@@ -1,6 +1,6 @@
 body {
     font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
-    background-color: #F8F3E6;
+    background-color: #f8f3e6;
     margin-top: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
@@ -11,9 +11,8 @@ body {
 }
 
 .container {
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-	height: 1000px;
-	background-color: #FFFFFF;
+	width: auto;
+	min-height: 900px;
+	height: auto;
+	background-color: #f8f3e6;
 }

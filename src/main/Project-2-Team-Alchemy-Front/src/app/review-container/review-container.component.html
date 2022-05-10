@@ -1,5 +1,6 @@
 <div class="review-container"> <!--vertical orientation, no photos-->
     <h3 class="review-username">{{reviewData.users}}</h3>
-    <div class="review-user-rating" *ngIf="checkAnonymous()">{{reviewData.rating}}</div>
+    <app-restaurant-rating class="star-review" [ratingValue]="reviewData.rating" [maxValue]="5" 
+    [readOnly]="true" #rating></app-restaurant-rating>
     <div class="review-reviewcontent">{{reviewData.reviewtext}}</div>
 </div>
