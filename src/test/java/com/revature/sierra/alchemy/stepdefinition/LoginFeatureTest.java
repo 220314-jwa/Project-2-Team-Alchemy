@@ -31,7 +31,6 @@ public class LoginFeatureTest {
 	}
 	
 	
-	
 	@Given("user arrives at the homepage")
 	public void user_arrives_at_the_homepage() {
 		setUp.pageController.homePage.clickHome();

@@ -33,64 +33,29 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features={"./src/test/java/resources/com/revature/sierra/alchemy/RateRestaurant.feature"}, glue={"com.revature.sierra.alchemy"}, tags="@RateRestaurant")
 public class RateRestaurant {
-	static WebDriver driver;
-
-	
-	@FindBy(id="example")
-	WebElement departmentId;
+	public static SetUp setUp;
 	
 	@BeforeAll
 	public static void Setup() {
-		File file = new File("src/test/resources/chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());//Environmental variable
-		driver = new ChromeDriver(); //default to find environmental variable 
-
-		WebElement example = driver.findElement(By.id("example"));
-		example.click();
-		
-		
-		WebElement selectElement = driver.findElement(By.id("selectelement"));
-		WebElement option = driver.findElement(By.id("option"));
-		WebElement input = driver.findElement(By.id("input"));
-		String a = "a";
-		input.sendKeys(":)");
-		input.sendKeys(a);
-		driver.get("www.google.com");
-		
-		/*Wait<WebDriver> fluentWait = new FluentWait<>(driver)
-				.withTimeout(Duration.ofSeconds(2)) //Final Duraction of the wait
-				.pollingEvery(Duration.ofMillis(500)); // Interval that the wait calls the specified method
-		fluentWait.until(ExpectedConditions.elementToBeClickable(By.id("logInBtn")));
-		
-		
-		Wait<WebDriver> exampleWait = new FluentWait<>(driver).withTimeout(Duration.ofSeconds(1));
-		exampleWait.until(ExpectedConditions.elementToBeClickable(By.id("exampleBtn")));
-		exampleWait.until(ExpectedConditions.alertIsPresent());
-		exampleWait.until(ExpectedConditions.elementToBeSelected(By.id("exampleBtn")));
-		exampleWait.until(ExpectedConditions.presenceOfElementLocated(By.id("exampleBtn")));
-
-
-*/
-		
-		
+		setUp = new SetUp();
 	}
 	
 	@AfterAll
 	public static void fin() {
-		driver.close();
+		setUp.driver.close();
 	}
 	
 	@Given("the user is {string}")
 	public void the_user_is(String string) {
 	    // Write code here that turns the phrase above into concrete actions
-	    page.clickByID(string);
+		setUp.pageController.homePage.clickRestaurant();
 	}
 	
 	
 	@Given("the user is homepage")
 	public void the_user_is_homepage() {
 	    // Write code here that turns the phrase above into concrete actions
-		page.clickByID("homepage");
+		setUp.pageController.homePage.clickHome();
 	}
 
 	@Given("given the user wrote a review")
