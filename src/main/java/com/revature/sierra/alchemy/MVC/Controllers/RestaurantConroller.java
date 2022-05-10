@@ -31,23 +31,30 @@ public class RestaurantConroller {
 	
 	@GetMapping(path="/restaurants/{restaurantId}/get-reviews")
 	public ResponseEntity<List<Reviews>> getReviews(@PathVariable int restaurant_id){
-		List<Reviews> review = reviewServ.getReviews(restaurant_id);
+		return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+/*
+		//List<Reviews> review = reviewServ.getReviews(restaurant_id);
 		if(review != null ) {
-			return ResponseEntity.ok(review);
+			//return ResponseEntity.ok(review);
+			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
 		} else {
 			return ResponseEntity.notFound().build();
-		}
+		}*/
 			
 	}
 	
-	@PostMapping
+	@PostMapping(path="/restaurants/{restaurantId}/post-reviews")
 	public ResponseEntity<Reviews> createReviews(@RequestBody Reviews review){
+		return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+		/*
 		try {
 			review = reviewServ.create(review);
-			return ResponseEntity.ok(review);
+			//return ResponseEntity.ok(review);
+			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
 		} catch (RestaurantNotFoundException e) {
 			return ResponseEntity.status(HttpStatus.CONFLICT).build();
 		}
+		*/
 	}
 	
 	

@@ -23,9 +23,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Users register(Users newUser) {
+	public void register(Users newUser) {
 		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
