@@ -1,13 +1,22 @@
 package com.revature.sierra.alchemy.MVC.Models;
 
-public class Users {
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
+// Adding JPA annotations  
+@Entity
+public class Users {
+	// including the column annotations
+	@Column
 	private String username;
+	@Column
 	private String password;
 	
+	
 	public Users() {
-		username = "";
-		password = "";
+
+		String username = "";
+		String password = "";
 	}
 	
 	public String getUsername() {
