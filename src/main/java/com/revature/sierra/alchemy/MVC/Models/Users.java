@@ -14,8 +14,8 @@ import javax.persistence.OneToMany;
 public class Users {
 	// including the column annotations
 	@Id
-	@OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
-	@JoinColumn(name="users")
+	//@OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+	//@JoinColumn(name="users")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column

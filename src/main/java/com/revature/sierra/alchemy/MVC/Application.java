@@ -19,11 +19,12 @@ public class Application {
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
 					.allowedMethods("GET", "OPTIONS", "PUT", "POST", "DELETE", "PATCH")
-					.allowedOrigins("http://localhost:4200")
+					.allowedOrigins("http://localhost:8080")
 					.allowedHeaders("*")
 					.allowCredentials(true);
 			}
 		};
 	}
+
 
 }

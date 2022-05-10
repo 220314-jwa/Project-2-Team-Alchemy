@@ -14,8 +14,8 @@ import javax.persistence.OneToMany;
 @Entity
 public class Restaurant {
 	@Id
-	@OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
-	@JoinColumn(name="Restaurant_id")
+	//@OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+	//@JoinColumn(name="Restaurant_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private int id;
