@@ -1,6 +1,4 @@
 package com.revature.sierra.alchemy.MVC.Models;
-
-import java.io.Serializable;
 import java.sql.Date;
 import java.util.Objects;
 
@@ -13,11 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Reviews implements Serializable {
+public class Reviews{
 	@Id
-	@OneToOne
-	@JoinColumn(name="Restaurant_id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private int id;
 	@Column
@@ -27,18 +23,11 @@ public class Reviews implements Serializable {
 	@Column
 	private int users;
 	@Column
-	private Date datecreated;
+	private String datecreated;
 	@Column
 	private int restaurant_id;
 	
 	public Reviews() {
-		id =0;
-		reviewrating ="";
-		reviewtext ="";
-		users = 0;
-		this.datecreated= datecreated;
-		restaurant_id=0;
-		
 	}
 
 	public int getId() {
@@ -73,11 +62,11 @@ public class Reviews implements Serializable {
 		this.users = users;
 	}
 
-	public Date getDatecreated() {
+	public String getDatecreated() {
 		return datecreated;
 	}
 
-	public void setDatecreated(Date datecreated) {
+	public void setDatecreated(String datecreated) {
 		this.datecreated = datecreated;
 	}
 
