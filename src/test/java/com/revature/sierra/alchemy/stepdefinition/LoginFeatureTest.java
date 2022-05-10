@@ -70,7 +70,7 @@ public class LoginFeatureTest {
 	@Then("user is alerted that user is signed in")
 	public void user_is_alerted_that_user_is_signed_in() {
 	    // Write code here that turns the phrase above into concrete actions
-		assertTrue(Integer.parseInt(setUp.pageController.loginPage.getLoginSession()) > 0);
+		assertTrue(setUp.pageController.loginPage.getLoginSession() == "username");
 	}
 
 	@Then("sign in fails and asks user to retry credentials")
