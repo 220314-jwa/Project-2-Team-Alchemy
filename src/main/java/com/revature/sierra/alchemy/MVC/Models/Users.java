@@ -1,13 +1,35 @@
 package com.revature.sierra.alchemy.MVC.Models;
 
-public class Users {
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
+// Adding JPA annotations  
+@Entity
+public class Users {
+	// including the column annotations
+	@Id
+	@OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+	@JoinColumn(name="users")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	@Column
 	private String username;
+	@Column
 	private String password;
 	
+	
 	public Users() {
-		username = "";
-		password = "";
+	}
+	
+	public Users(String username, String password) {
+		this.setUsername(username);
+		this.setPassword(password);
 	}
 	
 	public String getUsername() {
