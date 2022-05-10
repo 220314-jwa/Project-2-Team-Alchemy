@@ -20,33 +20,29 @@ import com.revature.sierra.alchemy.MVC.Service.ReviewService;
 
 @RestController
 @RequestMapping(path="/restaurants")
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="http://localhost:8080")
 public class RestaurantConroller {
 	private ReviewService reviewServ;
 	
 	@Autowired
-	public RestaurantConroller(ReviewService reviewServ) {
-		this.reviewServ=reviewServ;
+	public RestaurantConroller(/*ReviewService reviewServ*/) {
+		//this.reviewServ=reviewServ;
 	}
 	
 	@GetMapping(path="/restaurants/{restaurantId}/get-reviews")
 	public ResponseEntity<List<Reviews>> getReviews(@PathVariable int restaurant_id){
-		return ResponseEntity.status(HttpStatus.ACCEPTED).build();
-/*
-		//List<Reviews> review = reviewServ.getReviews(restaurant_id);
+		List<Reviews> review = reviewServ.getReviews(restaurant_id);
 		if(review != null ) {
 			//return ResponseEntity.ok(review);
 			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
 		} else {
 			return ResponseEntity.notFound().build();
-		}*/
+		}
 			
 	}
 	
 	@PostMapping(path="/restaurants/{restaurantId}/post-reviews")
 	public ResponseEntity<Reviews> createReviews(@RequestBody Reviews review){
-		return ResponseEntity.status(HttpStatus.ACCEPTED).build();
-		/*
 		try {
 			review = reviewServ.create(review);
 			//return ResponseEntity.ok(review);

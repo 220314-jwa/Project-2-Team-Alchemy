@@ -22,7 +22,7 @@ import com.revature.sierra.alchemy.MVC.Service.UserService;
 
 @RestController
 @RequestMapping(path="/users")
-@CrossOrigin(origins="http://localhost:4200") // This localhost will be changed to AWS DB path
+@CrossOrigin(origins="http://localhost:8080") // This localhost will be changed to AWS DB path
 public class UsersController {
 	// connect UserService
 	private UserService userServ;
@@ -34,8 +34,6 @@ public class UsersController {
 	
 	@GetMapping(path="/checklogin")
 	public ResponseEntity<Users> checkLogin(@RequestBody Map<String, String> credentials) {
-		return ResponseEntity.status(HttpStatus.ACCEPTED).build();
-/*
 		String username = credentials.get("username");
 		try {
 			Users users = userServ.getLogIn(username);
@@ -43,14 +41,11 @@ public class UsersController {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
 		} catch(IncorrectResultSizeDataAccessException e) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-		}*/
+		}
 	}
 	
 	@GetMapping(path="/login")
 	public ResponseEntity<Users> logIn(@RequestBody Map<String, String> credentials){
-		return ResponseEntity.status(HttpStatus.ACCEPTED).build();
-
-		/*
 		String username = credentials.get("username");
 		String password = credentials.get("password");
 		try {
@@ -59,14 +54,11 @@ public class UsersController {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
 		} catch(IncorrectResultSizeDataAccessException e) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-		}*/
+		}
 	}
 	
 	@PostMapping(path="/register")
-	public ResponseEntity<Users> register(@RequestBody Map<String, String> credentials){
-		return ResponseEntity.status(HttpStatus.ACCEPTED).build();
-		/*
-		
+	public ResponseEntity<Users> register(@RequestBody Map<String, String> credentials){		
 		String username = credentials.get("username");
 		String password = credentials.get("password");
 		Users user = new Users(username,password);
@@ -75,7 +67,7 @@ public class UsersController {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
 		} catch(IncorrectResultSizeDataAccessException e) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-		}*/
+		}
 	}
 	
 	
