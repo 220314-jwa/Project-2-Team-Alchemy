@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
 			return newUser;
 		}
 		return null;
-	}
+
 
 	@Override
 	public Users getLogIn(String username) {

@@ -12,12 +12,6 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features={"./src/test/java/resources/com/revature/sierra/alchemy/list.feature"}, glue={"com.revature.sierra.alchemy"}, tags="@list")
 public class searchsteps {
-	@Given("User is at HomePage")
-	public void user_is_at_home_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
 	@When("The user clicks on the {string} Tab")
 	public void the_user_clicks_on_the_tab(String string) {
 	    // Write code here that turns the phrase above into concrete actions

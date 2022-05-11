@@ -1,6 +1,4 @@
 package com.revature.sierra.alchemy.MVC.Models;
-
-import java.io.Serializable;
 import java.sql.Date;
 import java.util.Objects;
 
@@ -10,35 +8,31 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Reviews implements Serializable {
+public class Reviews{
 	@Id
-	@OneToOne
-	@JoinColumn(name="Restaurant_id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private int id;
 	@Column
 	private String reviewrating;
 	@Column
 	private String reviewtext;
+	//Many reviews to one user who wrote them
+	@ManyToOne
+	@JoinColumn(name="users_id")
+	private Users users;
 	@Column
-	private int users;
-	@Column
-	private Date datecreated;
-	@Column
-	private int restaurant_id;
+	private String datecreated;
+	//Many reviews to one restaurant id
+	@ManyToOne
+	@JoinColumn(name="restaurant_id")
+	private Restaurant restaurant_id;
 	
 	public Reviews() {
-		id =0;
-		reviewrating ="";
-		reviewtext ="";
-		users = 0;
-		this.datecreated= datecreated;
-		restaurant_id=0;
-		
 	}
 
 	public int getId() {
@@ -65,27 +59,27 @@ public class Reviews implements Serializable {
 		this.reviewtext = reviewtext;
 	}
 
-	public int getUsers() {
+	public Users getUsers() {
 		return users;
 	}
 
-	public void setUsers(int users) {
+	public void setUsers(Users users) {
 		this.users = users;
 	}
 
-	public Date getDatecreated() {
+	public String getDatecreated() {
 		return datecreated;
 	}
 
-	public void setDatecreated(Date datecreated) {
+	public void setDatecreated(String datecreated) {
 		this.datecreated = datecreated;
 	}
 
-	public int getRestaurant_id() {
+	public Restaurant getRestaurant_id() {
 		return restaurant_id;
 	}
 
-	public void setRestaurant_id(int restaurant_id) {
+	public void setRestaurant_id(Restaurant restaurant_id) {
 		this.restaurant_id = restaurant_id;
 	}
 

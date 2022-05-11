@@ -4,10 +4,10 @@ import org.openqa.selenium.WebDriver;
 
 public class PageController {
 
-	public HomePage homePage;
-	public LoginPage loginPage;
-	public RestaurantPage restaurantPage;
-	public SignUpPage signUpPage;
+	public static HomePage homePage;
+	public static LoginPage loginPage;
+	public static RestaurantPage restaurantPage;
+	public static SignUpPage signUpPage;
 	
 	public PageController(WebDriver driver){
 		homePage = new HomePage(driver);

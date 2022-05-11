@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -63,7 +64,7 @@ public class UsersController {
 	public ResponseEntity<Users> register(@RequestBody Map<String, String> credentials){		
 		String username = credentials.get("username");
 		String password = credentials.get("password");
-		Users user = new Users();
+		Users user = new Users(username,password);
 		try {
 			userServ.register(user);
 			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
