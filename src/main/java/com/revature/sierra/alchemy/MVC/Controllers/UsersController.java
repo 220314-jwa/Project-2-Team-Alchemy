@@ -13,15 +13,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.revature.sierra.alchemy.MVC.Daos.UserRepo;
+import com.revature.sierra.alchemy.MVC.Exceptions.IncorrectCredentialsException;
 import com.revature.sierra.alchemy.MVC.Models.Users;
 import com.revature.sierra.alchemy.MVC.Service.UserService;
 
 
 @RestController
-@Controller
-@CrossOrigin(origins="http://localhost:4200") // This localhost will be changed to AWS DB path
+@RequestMapping(path="/users")
+@CrossOrigin(origins="http://localhost:8080") // This localhost will be changed to AWS DB path
 public class UsersController {
 	// connect UserService
 	private UserService userServ;
@@ -31,25 +34,41 @@ public class UsersController {
 		this.userServ = userServ;
 	}
 	
-	@GetMapping(path="/login")
-public ResponseEntity<List<Users>> getUser() {
-		String username = "";
-		List<Users> user = (List<Users>) userServ.getLogIn(username);
-		return ResponseEntity.ok(user);
-
-	}
-	
-	@PostMapping
-	public ResponseEntity<Users> logIn(@RequestBody Map<String, String> credentials){
+	@GetMapping(path="/checklogin")
+	public ResponseEntity<Users> checkLogin(@RequestBody Map<String, String> credentials) {
 		String username = credentials.get("username");
-		String password = credentials.get("password");
 		try {
-			Users users = userServ.logIn(username, password);
-			return ResponseEntity.ok(users);
+			Users users = userServ.getLogIn(username);
+			//return ResponseEntity.ok(users);
+			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
 		} catch(IncorrectResultSizeDataAccessException e) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 		}
 	}
 	
+	@GetMapping(path="/login")
+	public ResponseEntity<Users> logIn(@RequestBody Map<String, String> credentials) throws IncorrectCredentialsException{
+		String username = credentials.get("username");
+		String password = credentials.get("password");
+		try {
+			Users users = userServ.logIn(username, password);
+			//return ResponseEntity.ok(users);
+			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+		} catch(IncorrectResultSizeDataAccessException e) {
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+		}
+	}
+	
+	@PostMapping(path="/register")
+	public ResponseEntity<Users> register(@RequestBody Map<String, String> credentials){		
+		String username = credentials.get("username");
+		String password = credentials.get("password");
+		Users user = new Users();
+		try {
+			userServ.register(user);
+			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+		} catch(IncorrectResultSizeDataAccessException e) {
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+		}
+	}
 }
-

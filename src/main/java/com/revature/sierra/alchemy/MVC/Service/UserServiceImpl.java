@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.sierra.alchemy.MVC.Daos.UserRepo;
+import com.revature.sierra.alchemy.MVC.Exceptions.IncorrectCredentialsException;
 import com.revature.sierra.alchemy.MVC.Models.Users;
 
 @Service
@@ -17,14 +18,22 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public Users logIn(String username, String password) {
-		// TODO Auto-generated method stub
-		return null;
+	public Users logIn(String username, String password) throws IncorrectCredentialsException{
+		Users user = userRepo.findByUsername(username);
+		if (user != null && user.getPassword().equals(password)) {
+			return user;
+		}else {
+			return null;
+		}
 	}
 
 	@Override
 	public Users register(Users newUser) {
-		// TODO Auto-generated method stub
+		Users user = userRepo.findByUsername(newUser);
+		if (user != newUser) {
+			newUser.setUsername(user);
+			return newUser;
+		}
 		return null;
 	}
 
