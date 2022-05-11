@@ -7,6 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+<<<<<<< HEAD
+=======
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+>>>>>>> f7af0b9c2eb01e6d1797a0beab838d2691b7e3b1
 
 @Entity
 public class Reviews{
@@ -17,6 +23,7 @@ public class Reviews{
 	@Column
 	private String reviewRating;
 	@Column
+<<<<<<< HEAD
 	private String reviewText;
 	@Column
 	private int users;
@@ -24,6 +31,19 @@ public class Reviews{
 	private Date dateCreated;
 	@Column
 	private int restaurantId;
+=======
+	private String reviewtext;
+	//Many reviews to one user who wrote them
+	@ManyToOne
+	@JoinColumn(name="users_id")
+	private Users users;
+	@Column
+	private String datecreated;
+	//Many reviews to one restaurant id
+	@ManyToOne
+	@JoinColumn(name="restaurant_id")
+	private Restaurant restaurant_id;
+>>>>>>> f7af0b9c2eb01e6d1797a0beab838d2691b7e3b1
 	
 	public Reviews() {
 		super();
@@ -64,11 +84,11 @@ public class Reviews{
 		this.reviewText = reviewText;
 	}
 
-	public int getUsers() {
+	public Users getUsers() {
 		return users;
 	}
 
-	public void setUsers(int users) {
+	public void setUsers(Users users) {
 		this.users = users;
 	}
 
@@ -80,12 +100,21 @@ public class Reviews{
 		this.dateCreated = dateCreated;
 	}
 
+<<<<<<< HEAD
 	public int getRestaurantId() {
 		return restaurantId;
 	}
 
 	public void setRestaurantId(int restaurantId) {
 		this.restaurantId = restaurantId;
+=======
+	public Restaurant getRestaurant_id() {
+		return restaurant_id;
+	}
+
+	public void setRestaurant_id(Restaurant restaurant_id) {
+		this.restaurant_id = restaurant_id;
+>>>>>>> f7af0b9c2eb01e6d1797a0beab838d2691b7e3b1
 	}
 
 	@Override

@@ -14,20 +14,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.sierra.alchemy.MVC.Exceptions.RestaurantNotFoundException;
+import com.revature.sierra.alchemy.MVC.Models.Restaurant;
 import com.revature.sierra.alchemy.MVC.Models.Reviews;
+import com.revature.sierra.alchemy.MVC.Service.RestaurantService;
 import com.revature.sierra.alchemy.MVC.Service.ReviewService;
 
 
 @RestController
 @RequestMapping(path="/restaurants")
 @CrossOrigin(origins="http://localhost:8080")
-public class RestaurantConroller {
-	private ReviewService reviewServ;
-	
+public class RestaurantController {
 	@Autowired
-	public RestaurantConroller(/*ReviewService reviewServ*/) {
-		//this.reviewServ=reviewServ;
+	private ReviewService reviewServ;
+	@Autowired
+	private RestaurantService restaurantServ;
+	
+	
+	@GetMapping(path="/restaurants/search/{searchText}")
+	public ResponseEntity<List<Restaurant>> searchRestaurant(@PathVariable String searchContext) throws RestaurantNotFoundException{
+		List<Restaurant> restaurantList = restaurantServ.getRestaurant(searchContext);
+		if(restaurantList != null ) {
+			return ResponseEntity.ok(restaurantList);
+			//return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+		} else {
+			return ResponseEntity.notFound().build();
+		}
+			
 	}
+	
 	
 	@GetMapping(path="/restaurants/{restaurantId}/get-reviews")
 	public ResponseEntity<List<Reviews>> getReviews(@PathVariable int restaurant_id){
