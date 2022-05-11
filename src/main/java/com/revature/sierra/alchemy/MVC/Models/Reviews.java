@@ -18,7 +18,9 @@ public class Reviews{
 	@Column
 	private int id;
 	@Column
-	private String reviewrating;
+	private int rating;
+	@Column
+	private int reviewrating;
 	@Column
 	private String reviewtext;
 	//Many reviews to one user who wrote them
@@ -42,12 +44,20 @@ public class Reviews{
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	public int getRating() {
+		return rating;
+	}
 
-	public String getReviewrating() {
+	public void setRating(int id) {
+		this.rating = id;
+	}
+
+	public int getReviewrating() {
 		return reviewrating;
 	}
 
-	public void setReviewrating(String reviewrating) {
+	public void setReviewrating(int reviewrating) {
 		this.reviewrating = reviewrating;
 	}
 
