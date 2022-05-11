@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -20,12 +21,16 @@ public class Reviews{
 	private String reviewrating;
 	@Column
 	private String reviewtext;
-	@Column
-	private int users;
+	//Many reviews to one user who wrote them
+	@ManyToOne
+	@JoinColumn(name="users_id")
+	private Users users;
 	@Column
 	private String datecreated;
-	@Column
-	private int restaurant_id;
+	//Many reviews to one restaurant id
+	@ManyToOne
+	@JoinColumn(name="restaurant_id")
+	private Restaurant restaurant_id;
 	
 	public Reviews() {
 	}
@@ -54,11 +59,11 @@ public class Reviews{
 		this.reviewtext = reviewtext;
 	}
 
-	public int getUsers() {
+	public Users getUsers() {
 		return users;
 	}
 
-	public void setUsers(int users) {
+	public void setUsers(Users users) {
 		this.users = users;
 	}
 
@@ -70,11 +75,11 @@ public class Reviews{
 		this.datecreated = datecreated;
 	}
 
-	public int getRestaurant_id() {
+	public Restaurant getRestaurant_id() {
 		return restaurant_id;
 	}
 
-	public void setRestaurant_id(int restaurant_id) {
+	public void setRestaurant_id(Restaurant restaurant_id) {
 		this.restaurant_id = restaurant_id;
 	}
 
