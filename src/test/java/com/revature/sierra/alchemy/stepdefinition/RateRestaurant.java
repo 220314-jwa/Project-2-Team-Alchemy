@@ -39,25 +39,13 @@ public class RateRestaurant {
 	public static void Setup() {
 		setUp = new SetUp();
 	}
-	
-	@AfterAll
-	public static void fin() {
-		setUp.driver.close();
-	}
-	
+
 	@Given("the user is {string}")
 	public void the_user_is(String string) {
 	    // Write code here that turns the phrase above into concrete actions
 		setUp.pageController.homePage.clickRestaurant();
 	}
 	
-	
-	@Given("the user is homepage")
-	public void the_user_is_homepage() {
-	    // Write code here that turns the phrase above into concrete actions
-		setUp.pageController.homePage.clickHome();
-	}
-
 	@Given("given the user wrote a review")
 	public void given_the_user_wrote_a_review() {
 	    // Write code here that turns the phrase above into concrete actions
