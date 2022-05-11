@@ -2,7 +2,7 @@
 
     <div src class="restaurant-inner-container">
         <div class="restaurant-image-container" >
-            <img src="https://skillz4kidzmartialarts.com/wp-content/uploads/2017/04/default-image-620x600.jpg" class="restaurant-image-content">
+            <img src="../../assets/default-image-620x600.jpg" class="restaurant-image-content">
         </div>
         <div class="restaurant-info-container">
             <div class="restaurant-name">{{restaurantInfo.name}}</div>
@@ -12,8 +12,8 @@
             </div>
             <div class="restaurant-description restaurant-content">{{restaurantInfo.description}}</div>
             <div class="btn-container">
-                <button (click)="loadUserReviews()">Review</button>
-                <button (click)="loadWriteReview()">Write Review</button>
+                <button class="btn-review" (click)="loadUserReviews()">Review</button>
+                <button class="btn-review" (click)="loadWriteReview()">Write Review</button>
 
             </div>
         </div>

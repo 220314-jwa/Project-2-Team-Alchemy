@@ -3,6 +3,7 @@ import { RestaurantInfo } from '../models/restaurant-info';
 import { RestaurantReview } from '../models/restaurant-review';
 import { RestaurantReviewContainerComponent } from '../restaurant-review-container/restaurant-review-container.component';
 import { RestaurantReviewComponent } from '../restaurant-review/restaurant-review.component';
+import { RestaurantReviewService } from '../services/restaurant-review.service';
 
 @Component({
   selector: 'app-restaurant-content',
@@ -48,16 +49,26 @@ export class RestaurantContentComponent implements OnInit {
     
   }
 
+  //Get reviews
+
   loadWriteReview(){
     this.reviewComponent.clear();
     var reviewComponent = this.reviewComponent.createComponent(RestaurantReviewComponent);
   }
 
-  loadUserReviews(){
+  async loadUserReviews(){
     //Need a fetch request to grab from database
     this.reviewComponent.clear();
-    var reviewComponent = this.reviewComponent.createComponent(RestaurantReviewContainerComponent);
-    reviewComponent.instance.restaurantReviews = this.examples;
+    let httpResp = await fetch(window.location.href + '/restaurants/'+this.restaurantInfo.id+ '/get-reviews',
+            {method:'GET'});
+    const restaurantReviewJson = await httpResp.json();
+    if(httpResp && httpResp.status === 200){
+      //take the user to reivew
+      var reviewComponent = this.reviewComponent.createComponent(RestaurantReviewContainerComponent);
+      reviewComponent.instance.restaurantReviews = restaurantReviewJson;
+    } else{
+      //Tell user submission fail
+    }
   }
 
 }

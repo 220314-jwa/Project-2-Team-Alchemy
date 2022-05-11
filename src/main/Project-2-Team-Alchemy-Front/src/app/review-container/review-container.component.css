@@ -6,17 +6,20 @@
     padding-top: 5px;
     height:auto;
     width: 900px;
-    box-shadow:
-      1px 2px 2px #e24f5b66,
-      2px 4px 4px #e24f5b40,
-      4px 8px 8px #e24f5b1e;
+    border-bottom: 4px solid #48120E;
     margin-bottom: 10px;
-    background-color: #e9de61c4;
+    background-color: #e3c77e96;
+    border-radius: 5px;
 }
 
 .review-username{
   margin-left:20px;
+  margin-top: 10px;
   font-size: 20px;
+}
+
+.star-review{
+ margin-left: 15px;
 }
 
 

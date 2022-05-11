@@ -1,11 +1,14 @@
-package com.revature.sierra.alchemy.MVC.Service;
+ package com.revature.sierra.alchemy.MVC.Service;
+
+import org.springframework.stereotype.Service;
 
 import com.revature.sierra.alchemy.MVC.Models.Users;
+
 
 public interface UserService {
 
 	public Users logIn(String username, String password);
-	public Users register(Users newUser);
+	public void register(Users newUser);
 	
-	public Users getLogIn();
+	public Users getLogIn(String username);
 }

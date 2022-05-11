@@ -15,7 +15,8 @@ export class RestaurantReviewContainerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
   }
+
+  //Get review from service
 
 }
