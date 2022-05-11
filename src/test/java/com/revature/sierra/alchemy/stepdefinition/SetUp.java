@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import com.revature.sierra.alchemy.page.PageController;
 
 public class SetUp {
-	static WebDriver driver;
+	WebDriver driver;
 	public PageController pageController;
 	public SetUp() {
 		File file = new File("src/test/resources/chromedriver.exe");

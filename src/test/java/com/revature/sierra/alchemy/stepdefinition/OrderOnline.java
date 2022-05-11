@@ -1,10 +1,18 @@
 package com.revature.sierra.alchemy.stepdefinition;
 
+import org.junit.jupiter.api.BeforeAll;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class OrderOnline {
+	public static SetUp setUp;
+	
+	@BeforeAll
+	public static void Setup() {
+		setUp = new SetUp();
+	}
 	@Given("the User is at {string}")
 	public void the_user_is_at(String string) {
 	    // Write code here that turns the phrase above into concrete actions

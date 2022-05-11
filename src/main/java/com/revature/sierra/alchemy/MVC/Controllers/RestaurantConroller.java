@@ -50,7 +50,6 @@ public class RestaurantConroller {
 		} catch (RestaurantNotFoundException e) {
 			return ResponseEntity.status(HttpStatus.CONFLICT).build();
 		}
-		*/
 	}
 	
 	
