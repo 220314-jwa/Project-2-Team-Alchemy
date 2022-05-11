@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.revature.sierra.alchemy.MVC.Daos.UserRepo;
+import com.revature.sierra.alchemy.MVC.Exceptions.IncorrectCredentialsException;
 import com.revature.sierra.alchemy.MVC.Models.Users;
 import com.revature.sierra.alchemy.MVC.Service.UserService;
 
@@ -45,7 +48,7 @@ public class UsersController {
 	}
 	
 	@GetMapping(path="/login")
-	public ResponseEntity<Users> logIn(@RequestBody Map<String, String> credentials){
+	public ResponseEntity<Users> logIn(@RequestBody Map<String, String> credentials) throws IncorrectCredentialsException{
 		String username = credentials.get("username");
 		String password = credentials.get("password");
 		try {
@@ -69,8 +72,4 @@ public class UsersController {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 		}
 	}
-	
-	
-	
 }
-

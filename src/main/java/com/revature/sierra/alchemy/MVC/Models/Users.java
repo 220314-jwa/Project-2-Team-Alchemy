@@ -12,6 +12,7 @@ import javax.persistence.OneToMany;
 // Adding JPA annotations  
 @Entity
 public class Users {
+	
 	// including the column annotations
 	@Id
 	//@OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
@@ -32,12 +33,14 @@ public class Users {
 		this.setPassword(password);
 	}
 	
+
+	
 	public String getUsername() {
 		return username;
 	}
 	
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUsername(String user) {
+		this.username = user;
 	}
 	
 	public String getPassword() {
@@ -54,5 +57,6 @@ public class Users {
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	
 }
