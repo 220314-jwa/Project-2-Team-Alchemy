@@ -7,51 +7,61 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Reviews{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
-	private int id;
+	private Long id;
 	@Column
-	private String reviewrating;
+	private String reviewRating;
 	@Column
-	private String reviewtext;
+	private String reviewText;
 	@Column
 	private int users;
 	@Column
-	private String datecreated;
+	private Date dateCreated;
 	@Column
-	private int restaurant_id;
+	private int restaurantId;
 	
 	public Reviews() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public int getId() {
+	public Reviews(Long id, String reviewRating, String reviewText, int users, Date dateCreated, int restaurantId) {
+		super();
+		this.id = id;
+		this.reviewRating = reviewRating;
+		this.reviewText = reviewText;
+		this.users = users;
+		this.dateCreated = dateCreated;
+		this.restaurantId = restaurantId;
+	}
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getReviewrating() {
-		return reviewrating;
+	public String getReviewRating() {
+		return reviewRating;
 	}
 
-	public void setReviewrating(String reviewrating) {
-		this.reviewrating = reviewrating;
+	public void setReviewRating(String reviewRating) {
+		this.reviewRating = reviewRating;
 	}
 
-	public String getReviewtext() {
-		return reviewtext;
+	public String getReviewText() {
+		return reviewText;
 	}
 
-	public void setReviewtext(String reviewtext) {
-		this.reviewtext = reviewtext;
+	public void setReviewText(String reviewText) {
+		this.reviewText = reviewText;
 	}
 
 	public int getUsers() {
@@ -62,25 +72,25 @@ public class Reviews{
 		this.users = users;
 	}
 
-	public String getDatecreated() {
-		return datecreated;
+	public Date getDateCreated() {
+		return dateCreated;
 	}
 
-	public void setDatecreated(String datecreated) {
-		this.datecreated = datecreated;
+	public void setDateCreated(Date dateCreated) {
+		this.dateCreated = dateCreated;
 	}
 
-	public int getRestaurant_id() {
-		return restaurant_id;
+	public int getRestaurantId() {
+		return restaurantId;
 	}
 
-	public void setRestaurant_id(int restaurant_id) {
-		this.restaurant_id = restaurant_id;
+	public void setRestaurantId(int restaurantId) {
+		this.restaurantId = restaurantId;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(datecreated, id, restaurant_id, reviewrating, reviewtext, users);
+		return Objects.hash(dateCreated, id, restaurantId, reviewRating, reviewText, users);
 	}
 
 	@Override
@@ -92,12 +102,9 @@ public class Reviews{
 		if (getClass() != obj.getClass())
 			return false;
 		Reviews other = (Reviews) obj;
-		return Objects.equals(datecreated, other.datecreated) && id == other.id && restaurant_id == other.restaurant_id
-				&& Objects.equals(reviewrating, other.reviewrating) && Objects.equals(reviewtext, other.reviewtext)
-				&& users == other.users;
+		return Objects.equals(dateCreated, other.dateCreated) && Objects.equals(id, other.id)
+				&& restaurantId == other.restaurantId && Objects.equals(reviewRating, other.reviewRating)
+				&& Objects.equals(reviewText, other.reviewText) && users == other.users;
 	}
 	
-	
-	
-
 }
