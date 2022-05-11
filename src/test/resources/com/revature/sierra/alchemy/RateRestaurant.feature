@@ -1,6 +1,12 @@
 @RateRestaurant
 Feature: Rating a Restaurant
+<<<<<<< HEAD
+  I want to use this template for my feature file
+ 
+  @tag1
+=======
 
+>>>>>>> 237e9ec70b689c773b8695bf45f341e4393f27c9
   Scenario: user gets the address
     Given the user is "homepage"
     And given the user wrote a review
