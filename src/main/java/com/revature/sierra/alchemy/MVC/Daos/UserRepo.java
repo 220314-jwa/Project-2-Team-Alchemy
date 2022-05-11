@@ -11,5 +11,9 @@ import com.revature.sierra.alchemy.MVC.Models.Users;
 @Repository
 public interface UserRepo extends JpaRepository<Users, String>{
 		//return the list of registered users 
+		public Users findByUsername(String username);
 		public Users findByUsername(Users username);
+		
+		
+		
 }
