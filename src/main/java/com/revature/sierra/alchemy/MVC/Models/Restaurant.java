@@ -1,22 +1,25 @@
 package com.revature.sierra.alchemy.MVC.Models;
+import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
-
+import javax.persistence.Table;
+	
 
 @Entity
+@Table(name="Restaurant")
 public class Restaurant {
 	@Id
-	@OneToMany
-	@JoinColumn(name="Restaurant_id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="restaurant_id")
 	private int id;
 	@Column
 	private String name;
@@ -29,16 +32,8 @@ public class Restaurant {
 	@Column
 	private double avgrating;
 	
+	
 	public Restaurant() {
-		id = 0;
-		name ="";
-		address ="";
-		phone = "";
-		description ="";
-		avgrating = 0.0;
-		
-		
-		
 	}
 
 	public int getId() {
@@ -91,23 +86,5 @@ public class Restaurant {
 		this.avgrating = avgrating;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(address, avgrating, description, id, name, phone);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Restaurant other = (Restaurant) obj;
-		return Objects.equals(address, other.address) && avgrating == other.avgrating
-				&& Objects.equals(description, other.description) && id == other.id && Objects.equals(name, other.name)
-				&& phone == other.phone;
-	}
 
 }
