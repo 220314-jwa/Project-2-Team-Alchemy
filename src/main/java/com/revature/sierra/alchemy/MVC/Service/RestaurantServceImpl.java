@@ -22,10 +22,12 @@ public class RestaurantServceImpl implements RestaurantService {
 	
 	@Override
 	public List<Restaurant> getRestaurant(String searchContext) throws RestaurantNotFoundException {
-		// TODO Auto-generated method stub
-		
 		List<Restaurant> restaurantList = restaurantRepo.findByRestaurantName(searchContext);
-		return restaurantList;
+		if(!restaurantList.isEmpty()) {
+			return restaurantList;
+		} else {
+			throw new RestaurantNotFoundException();
+		}
 	}
 
 }

@@ -43,8 +43,8 @@ public class RestaurantController {
 	
 	
 	@GetMapping(path="/search/{searchText}")
-	public ResponseEntity<List<Restaurant>> searchRestaurant(@PathVariable String searchContext) throws RestaurantNotFoundException{
-		List<Restaurant> restaurantList = restaurantServ.getRestaurant(searchContext);
+	public ResponseEntity<List<Restaurant>> searchRestaurant(@PathVariable String searchText) throws RestaurantNotFoundException{
+		List<Restaurant> restaurantList = restaurantServ.getRestaurant(searchText);
 		if(restaurantList != null ) {
 			return ResponseEntity.ok(restaurantList);
 			//return ResponseEntity.status(HttpStatus.ACCEPTED).build();
