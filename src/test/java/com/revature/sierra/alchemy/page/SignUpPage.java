@@ -34,6 +34,9 @@ public class SignUpPage {
 		this.driver.findElement(By.linkText("Log In")).click();
 	}
 	
+	public String getSignUpPagetitle() {
+		return (driver.getCurrentUrl()).toString();
+	}
 	
 	
 }
