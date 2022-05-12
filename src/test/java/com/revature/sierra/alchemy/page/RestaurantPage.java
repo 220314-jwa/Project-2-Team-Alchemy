@@ -42,5 +42,12 @@ public class RestaurantPage {
 	public void EnterReview(String input) {
 		 this.driver.findElement(By.xpath("//textarea[contains(@placeholder,'Type Your Review')]")).sendKeys(input);
 	}
+	
+	
+	public String getRestaurantPagetitle() {
+		return (driver.getCurrentUrl()).toString();
+	}
+	
+	
 
 } 
