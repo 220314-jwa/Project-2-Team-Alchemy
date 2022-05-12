@@ -11,7 +11,7 @@ import com.revature.sierra.alchemy.MVC.Models.Users;
 
 @Repository
 public interface RestaurantRepo extends JpaRepository<Restaurant, String> {
-	//
 	@Query(value = "SELECT * from Restaurant where Name LIKE '%?1%'", nativeQuery = true)
 	public List<Restaurant> findByRestaurantName(String Name);
+	public Restaurant findById(int id);
 }

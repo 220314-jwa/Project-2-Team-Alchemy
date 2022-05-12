@@ -1,5 +1,7 @@
 package com.revature.sierra.alchemy.MVC.Controllers;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
@@ -55,10 +57,11 @@ public class RestaurantController {
 	
 	@GetMapping(path="/{restaurant_id}/get-reviews")
 	public ResponseEntity<List<Reviews>> getReviews(@PathVariable int restaurant_id){
-		List<Reviews> review = reviewServ.getReviews(restaurant_id);
+		Restaurant restaurant = new Restaurant();
+		restaurant.setId(restaurant_id);
+		List<Reviews> review = reviewServ.getReviews(restaurant);
 		if(review != null ) {
-			//return ResponseEntity.ok(review);
-			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+			return ResponseEntity.ok(review);
 		} else {
 			return ResponseEntity.notFound().build();
 		}
@@ -69,14 +72,19 @@ public class RestaurantController {
 	@ResponseBody
 	public ResponseEntity<Reviews> createReviews(@PathVariable int restaurantId, @RequestBody Map<String, String> reviewJson){
 		Reviews review = new Reviews();
-		Restaurant restaurant = new Restaurant();
-		Users user = new Users();
-		user.setUsername(reviewJson.get("user"));
+		Restaurant restaurant = restaurantServ.getRestaurant(restaurantId);
+		Users user = userServ.getUser(Integer.parseInt(reviewJson.get("user_id")));
+	    LocalDateTime currentTime = LocalDateTime.now();
+	    System.out.println("Before formatting: " + currentTime);
+	    DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+	    
+	    String formattedDate = currentTime.format(timeFormat);
 		restaurant.setId(restaurantId);
-		review.setRating(Integer.parseInt(reviewJson.get("rating")));
 		review.setRestaurant_id(restaurant);
+		review.setRating(Integer.parseInt(reviewJson.get("rating")));
 		review.setUsers(user);
-		review.setReviewtext(reviewJson.get("reviewtext"));
+		review.setReviewtext(reviewJson.get("reviewtext").toString());
+		review.setDatecreated(formattedDate);
 		review.setReviewrating(Integer.parseInt(reviewJson.get("reviewrating")));
 		try {
 			reviewServ.create(review);

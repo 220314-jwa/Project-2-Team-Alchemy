@@ -1,4 +1,5 @@
 package com.revature.sierra.alchemy.MVC.Models;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.CascadeType;
@@ -8,16 +9,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
-
+import javax.persistence.Table;
+	
 
 @Entity
+@Table(name="Restaurant")
 public class Restaurant {
 	@Id
-	//@OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
-	//@JoinColumn(name="Restaurant_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column
+	@Column(name="restaurant_id")
 	private int id;
 	@Column
 	private String name;
@@ -29,6 +31,7 @@ public class Restaurant {
 	private String description;
 	@Column
 	private double avgrating;
+	
 	
 	public Restaurant() {
 	}

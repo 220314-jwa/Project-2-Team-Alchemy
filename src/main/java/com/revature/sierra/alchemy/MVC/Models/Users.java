@@ -15,13 +15,12 @@ public class Users {
 	
 	// including the column annotations
 	@Id
-	//@OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
-	//@JoinColumn(name="users")
+	@Column(name="user_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column
+	@Column(name="username")
 	private String username;
-	@Column
+	@Column(name="password")
 	private String password;
 	
 	
@@ -32,8 +31,6 @@ public class Users {
 		this.setUsername(username);
 		this.setPassword(password);
 	}
-	
-
 	
 	public String getUsername() {
 		return username;
