@@ -11,8 +11,9 @@ import com.revature.sierra.alchemy.MVC.Models.Reviews;
 
 @Service
 public class ReviewServiceImpl implements ReviewService {
+	
+	private ReviewsRepository reviewrepo;
 
-	public ReviewServiceImpl() {
 	
 	@Override
 	public Reviews create(Reviews newReviews) throws RestaurantNotFoundException  {

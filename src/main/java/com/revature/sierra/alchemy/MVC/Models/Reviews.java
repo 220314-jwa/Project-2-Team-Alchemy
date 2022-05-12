@@ -30,7 +30,7 @@ public class Reviews{
 	//Many reviews to one restaurant id
 	@ManyToOne
 	@JoinColumn(name="restaurant_id")
-	private Restaurant restaurant_id;
+	private Restaurant restaurant;
 	
 	public Reviews() {
 	}
@@ -76,16 +76,16 @@ public class Reviews{
 	}
 
 	public Restaurant getRestaurant_id() {
-		return restaurant_id;
+		return restaurant;
 	}
 
 	public void setRestaurant_id(Restaurant restaurant_id) {
-		this.restaurant_id = restaurant_id;
+		this.restaurant = restaurant_id;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(datecreated, id, restaurant_id, reviewrating, reviewtext, users);
+		return Objects.hash(datecreated, id, restaurant, reviewrating, reviewtext, users);
 	}
 
 	@Override
@@ -97,7 +97,7 @@ public class Reviews{
 		if (getClass() != obj.getClass())
 			return false;
 		Reviews other = (Reviews) obj;
-		return Objects.equals(datecreated, other.datecreated) && id == other.id && restaurant_id == other.restaurant_id
+		return Objects.equals(datecreated, other.datecreated) && id == other.id && restaurant == other.restaurant
 				&& Objects.equals(reviewrating, other.reviewrating) && Objects.equals(reviewtext, other.reviewtext)
 				&& users == other.users;
 	}
