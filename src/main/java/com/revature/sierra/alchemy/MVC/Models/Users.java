@@ -47,13 +47,6 @@ public class Users {
 		this.password = password;
 	}
 
-
-
-	public void setUsername(Users user) {
-		this.username = username;
-		
-	}
-	
 	public int getId() {
 		return id;
 	}

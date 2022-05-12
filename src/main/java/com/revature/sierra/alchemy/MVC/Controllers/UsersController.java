@@ -66,7 +66,7 @@ public class UsersController {
 		try {
 			userServ.register(user);
 			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
-		} catch(IncorrectResultSizeDataAccessException e) {
+		} catch(UsernameAlreadyExistsException e) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 		}
 	}

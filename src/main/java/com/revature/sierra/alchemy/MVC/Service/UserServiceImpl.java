@@ -36,9 +36,10 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public Users register(Users newUser) throws UsernameAlreadyExistsException {
-		int newUserID = userRepo.save(newUser).getId();
-		if (newUserID != 0) {
-			newUser.setId(newUserID);
+		Users logInUser = userRepo.findByUsername(newUser.getUsername());
+		if (logInUser == null) {
+			int userId = userRepo.save(newUser).getId();
+			newUser.setId(userId);
 			return newUser;
 		} else {
 			throw new UsernameAlreadyExistsException();
