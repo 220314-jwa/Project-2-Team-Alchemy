@@ -25,6 +25,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.sierra.alchemy.MVC.Application;
 import com.revature.sierra.alchemy.MVC.Controllers.UsersController;
+import com.revature.sierra.alchemy.MVC.Exceptions.RestaurantNotFoundException;
+import com.revature.sierra.alchemy.MVC.Service.RestaurantService;
 import com.revature.sierra.alchemy.MVC.Service.ReviewService;
 import com.revature.sierra.alchemy.MVC.Service.UserService;
 import com.revature.sierra.alchemy.MVC.Models.*;
@@ -33,6 +35,8 @@ import com.revature.sierra.alchemy.MVC.Models.*;
 public class RestaurantControllerTest {
 	@MockBean
 	private ReviewService reviewService;
+	@MockBean
+	private RestaurantService restaurantService;
 	@Autowired
 	private UsersController userController;
 	@Autowired
@@ -48,15 +52,27 @@ public class RestaurantControllerTest {
 	}
 	
 	@Test
+	public void SearchReview() throws JsonProcessingException, Exception {
+		List<Restaurant> mockRestaurantList = Collections.emptyList();
+		when(restaurantService.getRestaurant("")).thenReturn(mockRestaurantList);
+		
+		mockMvc.perform(get("/restaurants/search/Wal"))
+			.andExpect(status().isOk())
+			.andExpect(content().json(jsonMapper.writeValueAsString(mockRestaurantList)));
+	}
+	
+	@Test
 	public void GetReview() throws JsonProcessingException, Exception {
 		List<Reviews> mockReviewList = Collections.emptyList();
-		when(reviewService.getReviews(1)).thenReturn(mockReviewList);
+		Restaurant mockRestaurant = new Restaurant();
+		mockRestaurant.setId(1);
+		when(reviewService.getReviews(mockRestaurant)).thenReturn(mockReviewList);
 		
 		mockMvc.perform(get("/restaurants/1/get-reviews"))
 		.andExpect(status().isOk())
 		.andExpect(content().json(jsonMapper.writeValueAsString(mockReviewList)));
-
 	}
+	
 	
 	@Test
 	public void PostReview() throws JsonProcessingException, Exception {
