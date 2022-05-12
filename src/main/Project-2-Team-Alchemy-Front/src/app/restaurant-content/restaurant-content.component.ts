@@ -11,7 +11,7 @@ import { RestaurantReviewService } from '../services/restaurant-review.service';
   styleUrls: ['./restaurant-content.component.css']
 })
 export class RestaurantContentComponent implements OnInit {
-  examples : Array<RestaurantReview> = [
+  /*examples : Array<RestaurantReview> = [
     { users: 'example1',
       reviewId: 1,
       reviewtext: 'The service was alright. The new waitress was amazing \
@@ -21,7 +21,7 @@ export class RestaurantContentComponent implements OnInit {
       rating: 1,
       reviewrating: 1,
       datecreated: "mm-dd-yy",
-      restaurant_id: 1,
+      restaurant: 1,
     },
     { reviewId:1,
       users: 'example2',
@@ -29,9 +29,9 @@ export class RestaurantContentComponent implements OnInit {
       rating: 1,
       reviewrating: 1,
       datecreated: "mm-dd-yy",
-      restaurant_id: 1,
+      restaurant: 1,
     },
-  ];
+  ];*/
 
   @ViewChild('thisComponent') thisComponent!: ElementRef;
   @ViewChild('restaurantReview', { read: ViewContainerRef }) reviewComponent!: ViewContainerRef;

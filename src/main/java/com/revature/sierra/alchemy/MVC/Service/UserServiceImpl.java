@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.revature.sierra.alchemy.MVC.Daos.UserRepo;
 import com.revature.sierra.alchemy.MVC.Exceptions.IncorrectCredentialsException;
+import com.revature.sierra.alchemy.MVC.Exceptions.UsernameAlreadyExistsException;
 import com.revature.sierra.alchemy.MVC.Models.Users;
 
 @Service
@@ -18,24 +19,31 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public Users logIn(String username, String password) throws IncorrectCredentialsException{
-		Users user = userRepo.findByUsername(username);
-		if (user != null && user.getPassword().equals(password)) {
-			return user;
+	public Users getUser(int Id) {
+		Users user = userRepo.getById(Id);
+		return user;
+	}
+	
+	@Override
+	public Users logIn(Users user) throws IncorrectCredentialsException{
+		Users logInUser = userRepo.findByUsername(user.getUsername());
+		if (user != null && logInUser.getPassword().equals(user.getPassword())) {
+			return logInUser;
 		}else {
-			return null;
+			throw new IncorrectCredentialsException();
 		}
 	}
 
 	@Override
-	public Users register(Users newUser) {
-		Users user = userRepo.findByUsername(newUser);
-		if (user != newUser) {
-			newUser.setUsername(user);
+	public Users register(Users newUser) throws UsernameAlreadyExistsException {
+		int newUserID = userRepo.save(newUser).getId();
+		if (newUserID != 0) {
+			newUser.setId(newUserID);
 			return newUser;
+		} else {
+			throw new UsernameAlreadyExistsException();
 		}
-		return null;
-
+	}
 
 	@Override
 	public Users getLogIn(String username) {

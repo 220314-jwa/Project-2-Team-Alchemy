@@ -12,4 +12,6 @@ import com.revature.sierra.alchemy.MVC.Models.Reviews;
 public interface RestaurantService {
 	public List<Restaurant> getRestaurant(String searchContext) throws RestaurantNotFoundException;
 
+	public Restaurant getRestaurant(int id);
+
 }

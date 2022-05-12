@@ -7,7 +7,7 @@ export class RestaurantReview {
         public reviewtext: string,
         public reviewrating: number,
         public datecreated: string,
-        public restaurant_id: number
+        public restaurantid: number
     ){
     }
 }

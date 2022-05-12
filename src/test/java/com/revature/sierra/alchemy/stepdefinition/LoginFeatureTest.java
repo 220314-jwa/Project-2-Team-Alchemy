@@ -36,7 +36,7 @@ public class LoginFeatureTest {
 	
 	@Given("user arrives at the homepage")
 	public void user_arrives_at_the_homepage() {
-		//pageController.homePage.clickHome();
+		setUp.pageController.homePage.clickHome();
 	}
 
 	@When("user clicks on member sign on button")
