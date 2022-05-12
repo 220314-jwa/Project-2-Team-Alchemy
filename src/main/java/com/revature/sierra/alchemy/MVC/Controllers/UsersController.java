@@ -14,8 +14,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.revature.sierra.alchemy.MVC.Daos.UserRepo;
+import com.revature.sierra.alchemy.MVC.Exceptions.IncorrectCredentialsException;
+import com.revature.sierra.alchemy.MVC.Exceptions.UsernameAlreadyExistsException;
 import com.revature.sierra.alchemy.MVC.Models.Users;
 import com.revature.sierra.alchemy.MVC.Service.UserService;
 
@@ -38,39 +42,32 @@ public class UsersController {
 		try {
 			Users users = userServ.getLogIn(username);
 			//return ResponseEntity.ok(users);
-			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+			return ResponseEntity.ok(users);
 		} catch(IncorrectResultSizeDataAccessException e) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 		}
 	}
 	
 	@GetMapping(path="/login")
-	public ResponseEntity<Users> logIn(@RequestBody Map<String, String> credentials){
-		String username = credentials.get("username");
-		String password = credentials.get("password");
+	public ResponseEntity<Users> logIn(@RequestBody Users user) throws IncorrectCredentialsException{
 		try {
-			Users users = userServ.logIn(username, password);
-			//return ResponseEntity.ok(users);
-			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+			Users users = userServ.logIn(user);
+			return ResponseEntity.ok(users);
 		} catch(IncorrectResultSizeDataAccessException e) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 		}
 	}
 	
 	@PostMapping(path="/register")
-	public ResponseEntity<Users> register(@RequestBody Map<String, String> credentials){		
-		String username = credentials.get("username");
-		String password = credentials.get("password");
-		Users user = new Users(username,password);
+	public ResponseEntity<Users> register(@RequestBody Users user) throws UsernameAlreadyExistsException{		
+		//String username = credentials.get("username");
+		//String password = credentials.get("password");
+		//Users user = new Users(username,password);
 		try {
 			userServ.register(user);
 			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
-		} catch(IncorrectResultSizeDataAccessException e) {
+		} catch(UsernameAlreadyExistsException e) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 		}
 	}
-	
-	
-	
 }
-

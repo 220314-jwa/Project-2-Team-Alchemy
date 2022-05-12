@@ -2,8 +2,10 @@ package com.revature.sierra.alchemy.MVC.Models;
 import java.sql.Date;
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,18 +19,20 @@ public class Reviews{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private int id;
-	@Column
-	private String reviewrating;
-	@Column
+	@Column(name="Rating")
+	private int rating;
+	@Column(name="reviewrating")
+	private int reviewrating;
+	@Column(name="reviewtext")
 	private String reviewtext;
 	//Many reviews to one user who wrote them
-	@ManyToOne
-	@JoinColumn(name="users_id")
+	@ManyToOne(cascade= {CascadeType.MERGE})
+	@JoinColumn(name="User_ID")
 	private Users users;
-	@Column
+	@Column(name="datecreated")
 	private String datecreated;
 	//Many reviews to one restaurant id
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.MERGE)
 	@JoinColumn(name="restaurant_id")
 	private Restaurant restaurant;
 	
@@ -42,12 +46,20 @@ public class Reviews{
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	public int getRating() {
+		return rating;
+	}
 
-	public String getReviewrating() {
+	public void setRating(int id) {
+		this.rating = id;
+	}
+
+	public int getReviewrating() {
 		return reviewrating;
 	}
 
-	public void setReviewrating(String reviewrating) {
+	public void setReviewrating(int reviewrating) {
 		this.reviewrating = reviewrating;
 	}
 
@@ -83,24 +95,6 @@ public class Reviews{
 		this.restaurant = restaurant_id;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(datecreated, id, restaurant, reviewrating, reviewtext, users);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Reviews other = (Reviews) obj;
-		return Objects.equals(datecreated, other.datecreated) && id == other.id && restaurant == other.restaurant
-				&& Objects.equals(reviewrating, other.reviewrating) && Objects.equals(reviewtext, other.reviewtext)
-				&& users == other.users;
-	}
 	
 	
 	

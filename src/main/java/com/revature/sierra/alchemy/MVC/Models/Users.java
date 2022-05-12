@@ -12,15 +12,15 @@ import javax.persistence.OneToMany;
 // Adding JPA annotations  
 @Entity
 public class Users {
+	
 	// including the column annotations
 	@Id
-	//@OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
-	//@JoinColumn(name="users")
+	@Column(name="user_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column
+	@Column(name="username")
 	private String username;
-	@Column
+	@Column(name="password")
 	private String password;
 	
 	
@@ -36,8 +36,8 @@ public class Users {
 		return username;
 	}
 	
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUsername(String user) {
+		this.username = user;
 	}
 	
 	public String getPassword() {
@@ -46,5 +46,14 @@ public class Users {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	
 }

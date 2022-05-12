@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.revature.sierra.alchemy.MVC.Daos.ReviewsRepository;
 import com.revature.sierra.alchemy.MVC.Exceptions.RestaurantNotFoundException;
+import com.revature.sierra.alchemy.MVC.Models.Restaurant;
 import com.revature.sierra.alchemy.MVC.Models.Reviews;
 
 @Service
@@ -15,6 +16,8 @@ public class ReviewServiceImpl implements ReviewService {
 	private ReviewsRepository reviewrepo;
 
 	
+	public ReviewServiceImpl() {
+	}
 	@Override
 	public Reviews create(Reviews newReviews) throws RestaurantNotFoundException  {
 		int id = reviewrepo.save(newReviews).getId();
@@ -28,9 +31,8 @@ public class ReviewServiceImpl implements ReviewService {
 	}
 
 	@Override
-	public List<Reviews> getReviews(int restaurant_id) {
-		return reviewrepo.findAll();
-		
+	public List<Reviews> getReviews(Restaurant restaurant_id) {
+		return reviewrepo.findByRestaurantId(restaurant_id.getId());
 	}
 
 	

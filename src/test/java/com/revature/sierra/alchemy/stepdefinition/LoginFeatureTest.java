@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.revature.sierra.alchemy.page.LoginPage;
 import com.revature.sierra.alchemy.page.PageController;
 
 import io.cucumber.java.BeforeAll;
@@ -36,7 +37,7 @@ public class LoginFeatureTest {
 	
 	@Given("user arrives at the homepage")
 	public void user_arrives_at_the_homepage() {
-		//pageController.homePage.clickHome();
+		setUp.pageController.homePage.clickHome();
 	}
 
 	@When("user clicks on member sign on button")
@@ -47,18 +48,25 @@ public class LoginFeatureTest {
 
 	@When("user inputs {string} on username text field")
 	public void user_inputs_on_username_text_field(String string) {
+		setUp.pageController.loginPage.inputIntoUserName(string);
 	}
+	
+	
 
 	@When("user inputs {string} on password text field")
 	public void user_inputs_on_password_text_field(String string) {
+		setUp.pageController.loginPage.inputIntoUserName(string);
 	}
+	
 
 	@When("user clicks Enter button")
 	public void user_clicks_enter_button() {
+		setUp.pageController.loginPage.clickLogin();
 	}
 
 	@Then("user is given access to member services of the app")
 	public void user_is_given_access_to_member_services_of_the_app() {
+		assertTrue(setUp.pageController.loginPage.getLoginSession() == "username");
 	}
 
 	@Then("user is alerted that user is signed in")

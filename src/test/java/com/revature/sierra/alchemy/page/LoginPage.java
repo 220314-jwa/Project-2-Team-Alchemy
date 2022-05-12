@@ -29,4 +29,11 @@ public class LoginPage {
 		return this.jsExecutor.executeScript(String.format(
 				"return window.sessionStorage.getItem('%s');", "Login-Auth")).toString();
 	}
+	
+	
+	public String getLoginPagetitle() {
+		return (driver.getCurrentUrl()).toString();
+	}
+	
+	
 }
