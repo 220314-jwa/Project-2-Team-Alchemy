@@ -14,7 +14,7 @@ export class RestaurantRatingComponent implements OnInit {
   @Input()
   readOnly!: boolean;
 
-
+  tempValue:number;
   constructor() {
     //Don't do logic
     //Setting variables
@@ -34,7 +34,11 @@ export class RestaurantRatingComponent implements OnInit {
 
   updateRating(event: number){
     if(this.readOnly) return;
-    this.ratingValue = event;
+    this.tempValue = event;
+  }
+
+  clickRating(){
+    this.ratingValue = this.tempValue;
   }
 
 }

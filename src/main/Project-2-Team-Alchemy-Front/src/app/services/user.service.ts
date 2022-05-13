@@ -57,5 +57,7 @@ export class UserService {
 
   logOut(): void{
     sessionStorage.removeItem('Login-Auth');
+    sessionStorage.removeItem('user-id');
+
   }
 }

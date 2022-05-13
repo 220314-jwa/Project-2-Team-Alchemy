@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobalConstant } from '../common/global-constant';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -22,7 +23,7 @@ export class SignupComponent implements OnInit {
 
   async register(credentials:any){
     let credentialsJSON = JSON.stringify(credentials);
-    let httpResp = await fetch("http://localhost:8080"  + '/users/register', {method:'POST' ,
+    let httpResp = await fetch(GlobalConstant.apiURL  + '/users/register', {method:'POST' ,
                                                                             body:credentialsJSON,
                                                                             headers: {
                                                                             'Content-Type': 'application/json'
