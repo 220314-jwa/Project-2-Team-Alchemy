@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
 import { RestaurantInfo } from '../models/restaurant-info';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { SearchFormData } from '../models/search-form-data';
+import { GlobalConstant } from '../common/global-constant';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestaurantDataService {
-  url:string = window.location.href;
+  headers = {'Content-type':'application/json'};
 
-  public restaurantSearchResult!: RestaurantInfo[];
-  constructor(private http : HttpClient) { 
+  constructor(private http:HttpClient) { 
 
   }
 
-  getRestaurantsBySearchForm(searchForm : SearchFormData) : RestaurantInfo[]{
-    let searchFormJSON = JSON.stringify(searchForm);
-    this.restaurantSearchResult = this.http.put(this.url + '', {body: searchFormJSON}) as any;
-    return this.restaurantSearchResult;
-  }
 
+//GlobalConstant.apiURL
+  getRestaurantsBySearchForm(searchForm : string): Observable<RestaurantInfo[]>{
+    return this.http.get(GlobalConstant.apiURL  + '/restaurants/search/' + searchForm, {headers:this.headers}).pipe(
+      map(resp => resp as RestaurantInfo[])
+    );
+  }
 }

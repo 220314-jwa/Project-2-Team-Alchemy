@@ -19,10 +19,11 @@ public class Application {
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
 					.allowedMethods("GET", "OPTIONS", "PUT", "POST", "DELETE", "PATCH")
-					.allowedOrigins("http://localhost:8080")
+					.allowedOrigins("http://project-2-team-alchemy.s3-website-us-west-1.amazonaws.com/","http://localhost:4200")
 					.allowedHeaders("*")
-					.allowCredentials(true);
+					.allowCredentials(false);
 			}
+
 		};
 	}
 

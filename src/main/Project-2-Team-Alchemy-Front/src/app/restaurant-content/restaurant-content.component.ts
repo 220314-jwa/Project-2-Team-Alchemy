@@ -4,6 +4,7 @@ import { RestaurantReview } from '../models/restaurant-review';
 import { RestaurantReviewContainerComponent } from '../restaurant-review-container/restaurant-review-container.component';
 import { RestaurantReviewComponent } from '../restaurant-review/restaurant-review.component';
 import { RestaurantReviewService } from '../services/restaurant-review.service';
+import { GlobalConstant } from '../common/global-constant';
 
 @Component({
   selector: 'app-restaurant-content',
@@ -38,7 +39,9 @@ export class RestaurantContentComponent implements OnInit {
 
   @Input()
   restaurantInfo!: RestaurantInfo;
-  constructor() { 
+
+  restaurantReview:RestaurantReview[];
+  constructor( private restaurantReviewService:RestaurantReviewService) { 
   }
 
   ngOnInit(): void {
@@ -56,19 +59,16 @@ export class RestaurantContentComponent implements OnInit {
     var reviewComponent = this.reviewComponent.createComponent(RestaurantReviewComponent);
   }
 
-  async loadUserReviews(){
-    //Need a fetch request to grab from database
-    this.reviewComponent.clear();
-    let httpResp = await fetch(window.location.href + '/restaurants/'+this.restaurantInfo.id+ '/get-reviews',
-            {method:'GET'});
-    const restaurantReviewJson = await httpResp.json();
-    if(httpResp && httpResp.status === 200){
-      //take the user to reivew
-      var reviewComponent = this.reviewComponent.createComponent(RestaurantReviewContainerComponent);
-      reviewComponent.instance.restaurantReviews = restaurantReviewJson;
-    } else{
-      //Tell user submission fail
-    }
+  loadUserReviews(): void{
+    this.restaurantReviewService.loadReview(this.restaurantInfo.id).subscribe(
+      resp => {
+        this.restaurantReview = resp;
+        this.reviewComponent.clear();
+        var reviewComponent = this.reviewComponent.createComponent(RestaurantReviewContainerComponent);
+        reviewComponent.instance.restaurantReviews = this.restaurantReview;
+      },
+    );
+
   }
 
 }
