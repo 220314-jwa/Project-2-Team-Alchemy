@@ -15,6 +15,7 @@ public interface UserRepo extends JpaRepository<Users, String>{
 		public Users findByUsername(String username);
 		@Query(value = "SELECT * from Users where User_ID=?1", nativeQuery = true)
 		public Users getById(int id);
+		public Object findByUsername(Users mockUser);
 		
 		
 		
