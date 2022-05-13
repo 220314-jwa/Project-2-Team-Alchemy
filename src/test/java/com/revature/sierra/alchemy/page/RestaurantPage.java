@@ -48,6 +48,7 @@ public class RestaurantPage {
 		return (driver.getCurrentUrl()).toString();
 	}
 	
-	
-
+	public boolean checkifRestaurantDisplayed(String restaurantName) {
+		return (driver.findElement(By.xpath("//*[text()[contains(., '"+ restaurantName +"')]]"))).isDisplayed();
+	}
 } 
