@@ -64,9 +64,10 @@ public class UserControllerTest {
 		String credentialsJSON = jsonMapper.writeValueAsString(credentials);
 		
 		Users mockUser = new Users();
+		mockUser.setId(1);
 		mockUser.setUsername(mockCred);
 		mockUser.setPassword(mockCred);
-		when(userServ.logIn(mockCred, mockCred)).thenReturn(mockUser);
+		when(userServ.logIn(mockUser)).thenReturn(mockUser);
 		
 		mockMvc.perform(post("/login")
 				.content(credentialsJSON)
