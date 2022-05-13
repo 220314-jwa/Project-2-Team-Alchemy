@@ -3,12 +3,10 @@
     <h1>Welcome </h1>
       <h3>Create A New Account</h3>
        <form>
-           <input type="text" placeholder="First Name" class="input" id="fName">
-           <input type="text" placeholder="Last Name" class="input" id="lName">
-           <input  required type="text" placeholder="Email" class="input" id="email">
-           <input  type="password" placeholder="Password" class="input" id="password">
+           <input [(ngModel)]="credentials.username" [ngModelOptions]="{standalone: true}" type="text" placeholder="Username" class="input" id="fName">
+           <input [(ngModel)]="credentials.password" [ngModelOptions]="{standalone: true}" type="password" placeholder="Password" class="input" id="password">
          <br>
-         <button class="btnSubmit">Submit</button>
+         <button class="btnSubmit" (click)="register(this.credentials)">Submit</button>
          <br>
          <p>Already have an account? 
          <a routerLink="/logIn">Log In</a></p>

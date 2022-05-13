@@ -1,6 +1,8 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { OrderPipe } from 'ngx-order-pipe';
 import { RestaurantDataService } from '../services/restaurant-data.service';
+import { RestaurantsListComponent } from '../restaurants-list/restaurants-list.component';
+import { RestaurantInfo } from '../models/restaurant-info';
 
 @Component({
   selector: 'app-restaurants-list-search',
@@ -11,17 +13,24 @@ export class RestaurantsListSearchComponent implements OnInit {
 
   searchContent : string;
 
-  
-  constructor( private dataService: RestaurantDataService
-  ) { }
+  public restaurantSearchResult: RestaurantInfo[];
+
+  constructor( private dataService: RestaurantDataService,
+      private restaurantListComponent: RestaurantsListComponent
+  ) { 
+    
+  }
 
   ngOnInit() {
   }
 
-  submitSearch(){
-    this.dataService.getRestaurantsBySearchForm(this.searchContent);
+  submitSearch() : void{
+    this.dataService.getRestaurantsBySearchForm(this.searchContent).subscribe(
+      resp => {
+        this.restaurantSearchResult = resp;
+        this.restaurantListComponent.setSearchResult(this.restaurantSearchResult);
+    });
     //Submit fetch request here
-
   }
 
 }

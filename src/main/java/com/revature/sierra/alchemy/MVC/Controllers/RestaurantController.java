@@ -85,7 +85,7 @@ public class RestaurantController {
 		review.setUsers(user);
 		review.setReviewtext(reviewJson.get("reviewtext").toString());
 		review.setDatecreated(formattedDate);
-		review.setReviewrating(Integer.parseInt(reviewJson.get("reviewrating")));
+		review.setReviewrating(0);
 		try {
 			reviewServ.create(review);
 			//return ResponseEntity.ok(review);

@@ -21,6 +21,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
+import { RestaurantReviewService } from './services/restaurant-review.service'
 import { UserService } from './services/user.service';
 import { RestaurantsListSearchComponent } from './restaurants-list-search/restaurants-list-search.component';
 import { RestaurantsListPaginationComponent } from './restaurants-list-pagination/restaurants-list-pagination.component';
@@ -62,6 +63,7 @@ import { RestaurantReviewComponent } from './restaurant-review/restaurant-review
   ],
   providers: [
     UserService,
+    RestaurantReviewService,
     DatePipe
   ],
   bootstrap: [AppComponent]

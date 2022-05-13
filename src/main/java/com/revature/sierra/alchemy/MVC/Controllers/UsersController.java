@@ -36,7 +36,7 @@ public class UsersController {
 		this.userServ = userServ;
 	}
 	
-	@GetMapping(path="/checklogin")
+	@PostMapping(path="/checklogin")
 	public ResponseEntity<Users> checkLogin(@RequestBody Map<String, String> credentials) {
 		String username = credentials.get("username");
 		try {
@@ -48,7 +48,7 @@ public class UsersController {
 		}
 	}
 	
-	@GetMapping(path="/login")
+	@PostMapping(path="/login")
 	public ResponseEntity<Users> logIn(@RequestBody Users user) throws IncorrectCredentialsException{
 		try {
 			Users users = userServ.logIn(user);
@@ -64,8 +64,8 @@ public class UsersController {
 		//String password = credentials.get("password");
 		//Users user = new Users(username,password);
 		try {
-			userServ.register(user);
-			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+			Users returnuser = userServ.register(user);
+			return ResponseEntity.ok(returnuser);
 		} catch(UsernameAlreadyExistsException e) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 		}

@@ -3,6 +3,7 @@ import { RestaurantReview } from '../models/restaurant-review';
 import { HttpClient } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { RestaurantRatingComponent } from '../restaurant-rating/restaurant-rating.component';
+import { GlobalConstant } from '../common/global-constant';
 
 @Component({
   selector: 'app-restaurant-review',
@@ -11,38 +12,40 @@ import { RestaurantRatingComponent } from '../restaurant-rating/restaurant-ratin
 })
 export class RestaurantReviewComponent implements OnInit {
   url = window.location.href;
-  restaurantReview!: RestaurantReview;
-  @ViewChild("rating") restaurantRatingComponent: RestaurantRatingComponent;
+  rating: number = 0;
+  reviewText: string;
+  @ViewChild("review-star-rating") restaurantRatingComponent: RestaurantRatingComponent;
 
   @Input()
   restaurantId : number;
   constructor(private http : HttpClient,
-              private dataPipe: DatePipe
     ){
 
-    this.restaurantReview = new RestaurantReview(-1,"test",0,"",0,"",this.restaurantId
-    );
   }
 
   ngOnInit(){
-    this.restaurantReview = new RestaurantReview(-1,"test",0,"",0,"",this.restaurantId);
 	}
 
   async submitReview()
   {
-    this.restaurantReview.rating = this.restaurantRatingComponent.getValue();
-    var date=new Date();
-    let latest_date =this.dataPipe.transform(date, 'long');
-    this.restaurantReview.datecreated = latest_date.toString();
-    this.restaurantReview.users = sessionStorage.getItem('Login-Auth');
+    var userId:String;
+    if(sessionStorage.getItem('Login-Auth') !== null){
+      userId = sessionStorage.getItem('Login-Auth');
+      let credentials = {
+        user_id: userId,
+        rating: this.rating,
+        reviewtext: this.reviewText,
+      }
 
-    let restaurantReviewJson = JSON.stringify(this.restaurantReview);
-    let httpResp = await fetch(this.url + '/restaurants/'+this.restaurantId+ '/post-reviews',
-            {method:'POST' , body:restaurantReviewJson});
-    if(httpResp && httpResp.status === 200){
-      //take the user to reivew
-    }else{
-      //Tell user submission fail
+      let restaurantReviewJson = JSON.stringify(credentials);
+      //GlobalConstant.apiURL 
+      let httpResp = await fetch(GlobalConstant.apiURL + '/restaurants/'+this.restaurantId+ '/post-reviews',
+              {method:'POST' , body:restaurantReviewJson});
+      if(httpResp && httpResp.status === 200){
+        //take the user to reivew
+      }else{
+        //Tell user submission fail
+      }
     }
   }
 }

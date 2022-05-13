@@ -1,21 +1,28 @@
+import { HttpRequest } from '@angular/common/http';
 import { ComponentRef, ElementRef, Injectable,ViewContainerRef  } from '@angular/core';
+import { map, Observable } from 'rxjs';
 import { RestaurantInfo } from '../models/restaurant-info';
+import { RestaurantReview } from '../models/restaurant-review';
 import { RestaurantContentComponent } from '../restaurant-content/restaurant-content.component';
+import { HttpClient } from '@angular/common/http';
+import { GlobalConstant } from '../common/global-constant';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestaurantReviewService {
+  headers = {'Content-type':'application/json'};
 
   restaurantMap = new Map<number,any>();
   public restaurantInfoContainer!: ViewContainerRef;
   private currentInfo!: any;
 
-  constructor() {
+  constructor(private http:HttpClient) {
   }
 
+
   
-  createRestaurantInfo(restaurantInfo: RestaurantInfo) {
+  public createRestaurantInfo(restaurantInfo: RestaurantInfo) {
     this.hideInfo();
     if(this.checkIfInfoLoaded(restaurantInfo.id)){ 
       this.displayInfo(restaurantInfo.id);
@@ -49,4 +56,11 @@ export class RestaurantReviewService {
     this.currentInfo = eleId;
   }
 
+  
+  loadReview(restaurant_id : number): Observable<RestaurantReview[]>{
+    console.log(restaurant_id);
+    return this.http.get(GlobalConstant.apiURL +"/restaurants/"+ restaurant_id +'/get-reviews', {headers:this.headers}).pipe(
+      map(resp=>resp as RestaurantReview[])
+    );
+  }
 }

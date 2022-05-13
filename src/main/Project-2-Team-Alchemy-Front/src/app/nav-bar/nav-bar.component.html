@@ -7,8 +7,9 @@
       <ul>
         <li routerLink="home" class="homePage">HOME</li>
         <li routerLink="restaurant-list" class="restaurantList">RESTAURANTS</li>
-        <li routerLink="login" class="loginPage">LOGIN</li>
-        <li routerLink="signUp">SIGN UP</li>
+        <li *ngIf="!getUserLoggedIn()" routerLink="login" class="loginPage">LOGIN</li>
+        <li *ngIf="!getUserLoggedIn()" routerLink="signUp">SIGN UP</li>
+        <li *ngIf="getUserLoggedIn()" (click)="logOut()">LOG OUT</li>
       </ul>
     </nav> 
     </div>
