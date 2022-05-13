@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { RestaurantReview } from '../models/restaurant-review';
 import { HttpClient } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
@@ -12,9 +12,10 @@ import { GlobalConstant } from '../common/global-constant';
 })
 export class RestaurantReviewComponent implements OnInit {
   url = window.location.href;
-  rating: number = 0;
   reviewText: string;
-  @ViewChild("review-star-rating") restaurantRatingComponent: RestaurantRatingComponent;
+
+  @ViewChild(RestaurantRatingComponent) 
+  private restaurantRatingComponent = {} as RestaurantRatingComponent;
 
   @Input()
   restaurantId : number;
@@ -31,16 +32,19 @@ export class RestaurantReviewComponent implements OnInit {
     var userId:String;
     if(sessionStorage.getItem('Login-Auth') !== null){
       userId = sessionStorage.getItem('Login-Auth');
+      console.log(this.restaurantRatingComponent.getValue());
       let credentials = {
-        user_id: userId,
-        rating: this.rating,
+        user_id:sessionStorage.getItem('user-id'),
+        rating: this.restaurantRatingComponent.getValue(),
         reviewtext: this.reviewText,
       }
 
       let restaurantReviewJson = JSON.stringify(credentials);
       //GlobalConstant.apiURL 
       let httpResp = await fetch(GlobalConstant.apiURL + '/restaurants/'+this.restaurantId+ '/post-reviews',
-              {method:'POST' , body:restaurantReviewJson});
+              {method:'POST' , body:restaurantReviewJson, headers: {
+                'Content-Type': 'application/json'
+              }});
       if(httpResp && httpResp.status === 200){
         //take the user to reivew
       }else{

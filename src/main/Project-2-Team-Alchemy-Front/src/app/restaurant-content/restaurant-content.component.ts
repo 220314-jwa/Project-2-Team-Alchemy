@@ -57,6 +57,7 @@ export class RestaurantContentComponent implements OnInit {
   loadWriteReview(){
     this.reviewComponent.clear();
     var reviewComponent = this.reviewComponent.createComponent(RestaurantReviewComponent);
+    reviewComponent.instance.restaurantId = this.restaurantInfo.id;
   }
 
   loadUserReviews(): void{
