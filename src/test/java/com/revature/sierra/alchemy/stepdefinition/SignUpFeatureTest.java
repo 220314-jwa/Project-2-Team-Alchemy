@@ -36,6 +36,10 @@ public class SignUpFeatureTest {
 		setUp = new SetUp();
 	}
 	
+	@AfterAll
+	public static void closeSetUp() {
+		setUp.driver.close();
+	}
 	
 	@Given("user is on homepage")
 	public void user_is_on_homepage() {
