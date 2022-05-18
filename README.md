@@ -13,7 +13,9 @@ Web application that allows user to find restaurants, view rating and reviews of
 * Maven - version 3.8.5
 * Eclipse - version 4.2
 * Cucumber - version 7.3
-
+* PostgreSQL - version 14.3
+* Postman - version 9.18
+* DBeaver - version 22.0.4
 ## Features
 
 List of features ready and TODOs for future development
