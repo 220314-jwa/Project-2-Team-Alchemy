@@ -2,7 +2,7 @@
 
 ## Project Description
 
-Web application that allows user to find restaurantss, view rating and reviews of a restaurant, write and rate a restaurant.
+Web application that allows user to find restaurants, view rating and reviews of a restaurant, write and rate a restaurant.
 
 ## Technologies Used
 
