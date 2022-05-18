@@ -53,13 +53,13 @@ To Run Spring-boot server:
 
 To Run Angular server:
    From root directory:
-      * cd ./src/main/Project-2-Team-Alchemy-Front
+      *  cd ./src/main/Project-2-Team-Alchemy-Front
       
    Install any angular dependency:
-      * npm install
+      *  npm install
       
    To run Angular front end server:
-      * ng serve
+      *  ng serve
       
 
 ## Contributors
