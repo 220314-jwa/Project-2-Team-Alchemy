@@ -30,17 +30,21 @@ To-do list:
 ## Getting Started
    
 To install Java(8):
-   *  sudo yum install -y java-1.8.0-openjdk-devel
+   >  sudo yum install -y java-1.8.0-openjdk-devel
+   
 To install Java(11): 
-   *  sudo apt-get install openjdk-11-jdk
+   >  sudo apt-get install openjdk-11-jdk
+   
 To install Maven with yum :
-   *  sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
-   *  sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
-   *  sudo yum install -y apache-maven
+   >  sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+   >  sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+   >  sudo yum install -y apache-maven
+   
 If there is a problem, you can look into:
    https://www.baeldung.com/install-maven-on-windows-linux-mac
 To install Angular:
-   *  npm install -g @angular/cli
+   >  npm install -g @angular/cli
+   
 If there is any problem, you can look into:
   https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
