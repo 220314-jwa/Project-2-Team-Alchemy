@@ -45,10 +45,6 @@ To install Angular:
   https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
 
-  
-
-- All the `code` required to get started
-- Images of what it should look like
 
 ## Usage
 Once maven and java is installed, 
@@ -57,9 +53,9 @@ Once maven and java is installed,
 To Run Angular server
 From root directory:
 *  cd ./src/main/Project-2-Team-Alchemy-Front/
-Install any angular dependency
+Install any angular dependency:
 *  npm install
-To run Angular front end server
+To run Angular front end server:
 *  ng serve
 
 ## Contributors
