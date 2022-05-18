@@ -50,13 +50,17 @@ If there is any problem, you can look into:
 Once maven and java is installed, 
 To Run Spring-boot server:
    * mvn spring-boot:run in the root project directory.
+
 To Run Angular server:
    From root directory:
       * cd ./src/main/Project-2-Team-Alchemy-Front
+      
    Install any angular dependency:
       * npm install
+      
    To run Angular front end server:
       * ng serve
+      
 
 ## Contributors
 
