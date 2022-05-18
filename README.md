@@ -1,25 +1,73 @@
-# Project 2: Group Project
-This project is meant to show not only your ability to write code and tests, but also to work on a team using Agile/Scrum.
+# Curious Appetite
 
-## Setup
-1. Your team will spend 15-20 minutes coming up with ideas for the project. You should come up with 2-3 ideas, then write a 1-2 sentence proposal for each application and send it to me.
-3. Once I have approved one of your proposals, your team will write 5-10 user stories for the project. Assign point values to each story, then add the stories to a Trello board and share it with me.
-4. Your team will need to create GitHub repositories for the front end and back end, then share these with me as well (or just create them in the 220314-jwa organization).
-5. Create an ERD for the application and share/discuss the draft with me so that I can make suggestions as necessary.
-6. You must always write a Cucumber feature file before beginning work on a particular feature so that you can establish the expected behaviors with your team.
+## Project Description
 
-## Project Work
-1. Daily standup every morning before 10:30, then at 10:30, we will meet in the main room and each team lead will provide me the updates for the team. Keep standup notes on GitHub as well.
-2. Track the progress of user stories on Trello: Product Backlog, Sprint Backlog, In Progress, Testing, Peer Review, and Complete.
-3. Manage a burndown chart based on the story points and completion dates.
+Web application that allows user to find restaurantss, view rating and reviews of a restaurant, write and rate a restaurant.
 
-## Functional Requirements
-1. Data must be stored and retrieved from a PostgreSQL database (local or AWS).
-2. Back end will be a Spring Boot project.
-3. Data access will use Spring Data JPA, and HTTP handling will use Spring Web MVC.
-4. Back end unit testing will use JUnit and Mockito, and integration testing will also Mock MVC.
-5. Front end must be created using Angular.
-6. Front end must be tested using Selenium with Cucumber.
+## Technologies Used
 
-## Bonus Requirements
-1. Have the front end and back end fully deployed on AWS.
+* Angular - version 13.1
+* Spring - version 5.3
+* Selenium - version 3.17
+* Mockito - version 4.5
+* Maven - version 3.8.5
+* Eclipse - version 4.2
+* Cucumber - version 7.3
+
+## Features
+
+List of features ready and TODOs for future development
+* Find Restaurant Using Search
+* View Restaurant information
+* Write a review of a restaurant
+* Register/Login as a user
+
+To-do list:
+* View the reviews you wrote about a restaurant
+* Let restaurant owners view reviews about their restaurant
+* Finish writing Selenium and JUnit test
+
+## Getting Started
+   
+To install Java(8):
+>  sudo yum install -y java-1.8.0-openjdk-devel
+To install Java(11): 
+>  sudo apt-get install openjdk-11-jdk
+To install Maven with yum :
+>  sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+>  sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+>  sudo yum install -y apache-maven
+  if there is a problem, you can look into:
+  https://www.baeldung.com/install-maven-on-windows-linux-mac
+To install Angular:
+>  npm install -g @angular/cli
+  If there is any problem, you can look into:
+  https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+
+
+  
+
+- All the `code` required to get started
+- Images of what it should look like
+
+## Usage
+Once maven and java is installed, 
+  to Run Spring-boot server
+>  mvn spring-boot:run in the root project directory.
+To Run Angular server
+From root directory:
+>  cd ./src/main/Project-2-Team-Alchemy-Front/
+Install any angular dependency
+>  npm install
+To run Angular front end server
+>  ng serve
+
+## Contributors
+
+> Yu Wang as @YuWang711 - Team Lead
+> Jeremiah Lizarraga as @funkyprimate 
+> Monica Goitia as @Monica-G
+> Sindhumanthu Veeramani as @sindhumathi0691
+> Selome Adekunle as @Seloboss
+> Rabiat Ibraheem as @Rabiat-Ibraheem
+
