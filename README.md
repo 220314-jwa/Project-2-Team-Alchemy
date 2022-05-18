@@ -37,7 +37,9 @@ To install Java(11):
    
 To install Maven with yum :
    >  sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+
    >  sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+
    >  sudo yum install -y apache-maven
    
 If there is a problem, you can look into:
