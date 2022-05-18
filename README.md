@@ -30,18 +30,18 @@ To-do list:
 ## Getting Started
    
 To install Java(8):
-*  sudo yum install -y java-1.8.0-openjdk-devel
+   *  sudo yum install -y java-1.8.0-openjdk-devel
 To install Java(11): 
-*  sudo apt-get install openjdk-11-jdk
+   *  sudo apt-get install openjdk-11-jdk
 To install Maven with yum :
-*  sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
-*  sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
-*  sudo yum install -y apache-maven
-  if there is a problem, you can look into:
-  https://www.baeldung.com/install-maven-on-windows-linux-mac
+   *  sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+   *  sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+   *  sudo yum install -y apache-maven
+If there is a problem, you can look into:
+   https://www.baeldung.com/install-maven-on-windows-linux-mac
 To install Angular:
-*  npm install -g @angular/cli
-  If there is any problem, you can look into:
+   *  npm install -g @angular/cli
+If there is any problem, you can look into:
   https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
 
@@ -49,14 +49,14 @@ To install Angular:
 ## Usage
 Once maven and java is installed, 
 To Run Spring-boot server:
-   *  mvn spring-boot:run in the root project directory.
+   *mvn spring-boot:run in the root project directory.
 To Run Angular server:
    From root directory:
-      *  cd ./src/main/Project-2-Team-Alchemy-Front
+      *cd ./src/main/Project-2-Team-Alchemy-Front
    Install any angular dependency:
-      *  npm install
+      *npm install
    To run Angular front end server:
-      *  ng serve
+      *ng serve
 
 ## Contributors
 
