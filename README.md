@@ -44,6 +44,7 @@ To install Maven with yum :
    
 If there is a problem, you can look into:
    https://www.baeldung.com/install-maven-on-windows-linux-mac
+   
 To install Angular:
    >  npm install -g @angular/cli
    
