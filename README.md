@@ -6,6 +6,7 @@ Web application that allows user to find restaurants, view rating and reviews of
 
 ## Technologies Used
 
+* Java - version 11
 * Angular - version 13.1
 * Spring - version 5.3
 * Selenium - version 3.17
