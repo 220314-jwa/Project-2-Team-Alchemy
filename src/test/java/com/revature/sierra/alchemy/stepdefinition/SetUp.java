@@ -16,7 +16,7 @@ public class SetUp {
 		File file = new File("src/test/resources/chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());//Environmental variable
 		driver = new ChromeDriver(); //default to find environmental variable 
-		driver.get("http://localhost:4200");
+		driver.get("http://project-2-team-alchemy.s3-website-us-west-1.amazonaws.com/");
 		pageController = new PageController(driver);
 	}
 }

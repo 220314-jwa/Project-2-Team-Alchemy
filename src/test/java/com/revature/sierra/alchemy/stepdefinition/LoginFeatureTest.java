@@ -34,6 +34,10 @@ public class LoginFeatureTest {
 		setUp = new SetUp();
 	}
 	
+	@AfterAll
+	public static void closeSetUp() {
+		setUp.driver.close();
+	}
 	
 	@Given("user arrives at the homepage")
 	public void user_arrives_at_the_homepage() {

@@ -13,4 +13,5 @@ public interface UserService {
 	public Users register(Users newUser) throws UsernameAlreadyExistsException;
 	public Users getLogIn(String username);
 	public Users getUser(int Id);
+	public Users logIn(String username, String password);
 }
